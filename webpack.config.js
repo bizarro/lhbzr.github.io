@@ -12,8 +12,8 @@ const dirAssets = path.join(__dirname, 'assets')
 const dirNode = 'node_modules'
 
 const url = 'https://lhbzr.com/'
-const title = 'Luis Henrique Bizarro — Creative Front End Developer'
-const description = 'Creative Front End Developer based in São Paulo, Brazil with focus in JavaScript and WebGL.'
+const title = 'Luis Henrique Bizarro — Creative Developer'
+const description = 'Creative Developer based in São Paulo, Brazil with focus in JavaScript and WebGL.'
 
 const noscript = require('./partials/noscript')
 const analytics = require('./partials/google-analytics')

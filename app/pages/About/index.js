@@ -46,7 +46,7 @@ export default class extends Page {
         </h1>
 
         <p class="Description ${styles.description}">
-          I'm a 23 y/o Creative Front End Developer based in São Paulo, Brazil.<br>
+          I'm a 23 y/o Creative Developer based in São Paulo, Brazil.<br>
           I'm currently working remotely at UNIT9 and I'm also a Young Jury at Awwwards.
         </p>
 
