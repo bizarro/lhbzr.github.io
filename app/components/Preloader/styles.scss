@@ -1,0 +1,28 @@
+@import '../../styles/index';
+
+.preloader {
+  height: 25%;
+  left: 50%;
+  max-height: 200px;
+  position: absolute;
+  stroke: $color-white;
+  stroke-width: 1;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  width: 15%;
+  z-index: 2;
+}
+
+.preloader__media {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  :global(path) {
+    transition: stroke-dashoffset 0.5s;
+  }
+}

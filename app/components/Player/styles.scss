@@ -1,0 +1,61 @@
+@import '../../styles/index';
+
+.player {
+  bottom: 25px;
+  color: $color-white;
+  font-size: 0;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  visibility: hidden;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 100;
+
+  @include media('<small') {
+    bottom: 15px;
+  }
+}
+
+.player__button {
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0 5px;
+  padding: 0;
+  fill: $color-white;
+}
+
+.player__button__icon {
+  height: 13px;
+  stroke: $color-white;
+  width: 13px;
+
+  .player__button--toggle &--pause {
+    display: none;
+  }
+
+  .player__button--toggle &--play {
+    display: block;
+  }
+}
+
+.player__information {
+  color: $color-white;
+  display: block;
+  margin-top: 10px;
+}
+
+.player__information__title {
+  color: inherit;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  vertical-align: middle;
+
+  @include media('<small') {
+    font-size: 13px;
+  }
+}

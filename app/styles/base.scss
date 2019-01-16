@@ -1,0 +1,62 @@
+@import './index';
+@import './scrollbar';
+@import './unsupported';
+@import './fonts';
+
+html {
+  box-sizing: border-box;
+  cursor: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: $color-black;
+  color: $color-white;
+  font-family: $font;
+  position: fixed;
+  height: 100%;
+  user-select: none;
+  width: 100%;
+}
+
+#app {
+  display: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: none;
+  color: inherit;
+  cursor: none;
+  font: inherit;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+  cursor: none;
+  text-decoration: none;
+}

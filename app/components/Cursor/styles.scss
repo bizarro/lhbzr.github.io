@@ -1,0 +1,84 @@
+@import '../../styles/index';
+
+.element {
+  background: $color-white;
+  border-radius: 50%;
+  height: 10px;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  position: absolute;
+  width: 10px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.element__horizontal,
+.element__vertical {
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.4s ease;
+
+  &:after,
+  &:before {
+    border-color: $color-white;
+    border-style: solid;
+    content: '';
+    height: 5px;
+    position: absolute;
+    width: 5px;
+  }
+
+  .element--hover & {
+    opacity: 0 !important;
+  }
+}
+
+.element__horizontal {
+  &--active {
+    opacity: 1;
+  }
+
+  &:after,
+  &:before {
+    left: 50%;
+  }
+
+  &:after {
+    border-width: 1px 1px 0 0;
+    top: -10px;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  &:before {
+    border-width: 0 1px 1px 0;
+    bottom: -10px;
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+.element__vertical {
+  &--active {
+    opacity: 1;
+  }
+
+  &:after,
+  &:before {
+    top: 50%;
+  }
+
+  &:after {
+    border-width: 1px 0 0 1px;
+    left: -10px;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &:before {
+    border-width: 1px 1px 0 0;
+    right: -10px;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}

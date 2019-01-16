@@ -1,0 +1,41 @@
+:global {
+  [data-scrollbar] {
+    position: absolute !important;
+
+    &:before {
+      background: linear-gradient(to bottom, $color-black 0%, rgba($color-black, 0) 100%);
+      content: '';
+      display: block;
+      height: 200px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .scroll-content {
+    height: 100%;
+    width: 100%;
+  }
+
+  .scrollbar-track {
+    background: none !important;
+  }
+
+  .scrollbar-track-x {
+    height: 3px !important;
+  }
+
+  .scrollbar-track-y {
+    width: 3px !important;
+  }
+
+  .scrollbar-thumb {
+    background: $color-white !important;
+    border-radius: 0 !important;
+    width: 3px !important;
+  }
+}

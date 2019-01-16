@@ -1,0 +1,84 @@
+@import '../../styles/index';
+
+.menu {
+  color: $color-white;
+}
+
+.button {
+  height: 64px;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 129px;
+  z-index: 1;
+
+  &:first-child {
+    left: 25px;
+  }
+
+  &:last-child {
+    right: 25px;
+  }
+
+  @include media('<small') {
+    height: 37px;
+    width: 76px;
+
+    &:first-child {
+      left: 15px;
+    }
+
+    &:last-child {
+      right: 15px;
+    }
+  }
+}
+
+.button__text {
+  display: block;
+  font-size: 13px;
+  left: 50%;
+  letter-spacing: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+
+  :global(span) {
+    display: inline-block;
+  }
+
+  .button:first-child & {
+    margin-left: 5px;
+  }
+
+  .button:last-child & {
+    margin-right: 5px;
+  }
+
+  @include media('<small') {
+    font-size: 13px;
+  }
+}
+
+.button__media {
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
+
+.button__path {
+  fill: none;
+  stroke: $color-white;
+  stroke-width: 1px;
+
+  @include media('<small') {
+    stroke-width: 2px;
+  }
+}

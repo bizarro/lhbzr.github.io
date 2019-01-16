@@ -1,0 +1,8 @@
+$breakpoints: (
+  'small': 768px,
+  'medium': 1024px,
+  'large': 1280px,
+  'very-large': 1366px
+) !default;
+
+@import '../../node_modules/include-media/dist/_include-media.scss';
