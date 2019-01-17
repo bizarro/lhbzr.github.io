@@ -10,13 +10,12 @@
     "deploy": "cross-env git subtree push --prefix build origin master"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "assets-loader": "^0.5.2",
     "auto-bind": "^1.2.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-latest": "^6.24.1",
+    "babel-loader": "^8.0.0",
     "clean-webpack-plugin": "^0.1.19",
     "cname-webpack-plugin": "^1.0.1",
     "copy-webpack-plugin": "^4.5.1",

@@ -22,7 +22,7 @@ const share = `${url}share.jpg`
 module.exports = {
   entry: {
     vendor: [
-      'babel-polyfill'
+      '@babel/polyfill'
     ],
 
     bundle: path.join(dirApp, 'index')
