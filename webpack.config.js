@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CnameWebpackPlugin = require('cname-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
 
@@ -74,6 +75,11 @@ module.exports = {
       }
     ]),
 
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+
     new CnameWebpackPlugin({
       domain: 'lhbzr.com'
     })
@@ -91,35 +97,26 @@ module.exports = {
       },
 
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              module: true,
               sourceMap: IS_DEVELOPMENT
             }
-          }
-        ]
-      },
-
-      {
-        test: /\.scss/,
-        use: [
-          'style-loader',
+          },
           {
-            loader: 'css-loader',
+            loader: 'postcss-loader',
             options: {
-              modules: true,
               sourceMap: IS_DEVELOPMENT
             }
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: IS_DEVELOPMENT,
-              includePaths: [dirAssets]
+              sourceMap: IS_DEVELOPMENT
             }
           }
         ]

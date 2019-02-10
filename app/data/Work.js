@@ -4,6 +4,75 @@ import lovie from 'assets/work/the-lovie-awards.png'
 
 export default [
   {
+    category: 'Apps',
+    client: 'TIM',
+    color: '#004692',
+    company: 'Royalpixel',
+    content: [
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/1.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/2.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/3.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/4.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/5.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/6.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/7.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/8.jpg`),
+        height: 2148,
+        width: 1080
+      },
+      {
+        type: 'portrait',
+        source: require(`../assets/case/tim-novelas/9.jpg`),
+        height: 2148,
+        width: 1080
+      }
+    ],
+    date: 'January, 2019',
+    image: require(`../assets/work/tim-novelas.jpg`),
+    role: 'App Developer',
+    slug: 'tim-novelas',
+    technologies: 'React Native',
+    template: 'portrait',
+    title: 'TIM Novelas'
+  },
+  {
     awards: [
       {
         image: awwwards,
