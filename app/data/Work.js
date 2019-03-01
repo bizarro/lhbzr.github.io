@@ -4,6 +4,63 @@ import lovie from 'assets/work/the-lovie-awards.png'
 
 export default [
   {
+    category: 'Websites',
+    client: 'Dominic Berzins',
+    color: '#410807',
+    company: 'Dominic Berzins',
+    content: [
+      {
+        type: 'screenshot',
+        source: require(`../assets/case/dominic-berzins/1.jpg`),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require(`../assets/case/dominic-berzins/2.jpg`),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require(`../assets/case/dominic-berzins/3.jpg`),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require(`../assets/case/dominic-berzins/4.jpg`),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require(`../assets/case/dominic-berzins/5.jpg`),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require(`../assets/case/dominic-berzins/6.jpg`),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require(`../assets/case/dominic-berzins/7.jpg`),
+        height: 1080,
+        width: 1920
+      }
+    ],
+    date: 'February, 2019',
+    image: require(`../assets/work/dominic-berzins.jpg`),
+    role: 'Front End Developer',
+    slug: 'dominic-berzins',
+    technologies: 'GSAP · Prismic · WebGL',
+    title: 'Dominic Berzins',
+    url: 'https://dominic.bz/'
+  },
+  {
     category: 'Apps',
     client: 'TIM',
     color: '#004692',

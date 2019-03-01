@@ -1,6 +1,7 @@
 export const URLS = [
   '/about',
   '/work',
+  '/project/dominic-berzins',
   '/project/tim-novelas',
   '/project/cult',
   '/project/the-gift-rapper',

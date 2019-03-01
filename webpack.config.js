@@ -1,9 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CnameWebpackPlugin = require('cname-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
@@ -14,7 +14,7 @@ const dirNode = 'node_modules'
 
 const url = 'https://lhbzr.com/'
 const title = 'Luis Henrique Bizarro — Creative Developer'
-const description = 'Creative Developer based in São Paulo, Brazil with focus in JavaScript and WebGL.'
+const description = 'Creative Developer based in São Paulo, Brazil with focus on JavaScript and WebGL.'
 
 const noscript = require('./partials/noscript')
 const analytics = require('./partials/google-analytics')
@@ -46,6 +46,17 @@ module.exports = {
 
     }),
 
+    new CnameWebpackPlugin({
+      domain: 'lhbzr.com'
+    }),
+
+    new CopyWebpackPlugin([
+      {
+        from: './app/assets/shared',
+        to: ''
+      }
+    ]),
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, 'index.html'),
@@ -68,20 +79,9 @@ module.exports = {
       share
     }),
 
-    new CopyWebpackPlugin([
-      {
-        from: './app/assets/shared',
-        to: ''
-      }
-    ]),
-
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[contenthash].css',
       chunkFilename: '[id].css'
-    }),
-
-    new CnameWebpackPlugin({
-      domain: 'lhbzr.com'
     })
   ],
 
@@ -89,10 +89,18 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /(node_modules)/,
-        options: {
-          compact: true
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  useBuiltIns: 'entry'
+                }
+              ]
+            ]
+          }
         }
       },
 

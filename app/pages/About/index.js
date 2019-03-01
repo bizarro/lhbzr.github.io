@@ -47,11 +47,11 @@ export default class extends Page {
 
         <p class="Description ${styles.description}">
           I'm a 23 y/o Creative Developer based in São Paulo, Brazil.<br>
-          I'm currently working remotely at UNIT9 and I'm also a Young Jury at Awwwards.
+          I'm currently working remotely at UNIT9 and I'm also a Young Jury member at Awwwards.
         </p>
 
         <p class="Description ${styles.description}">
-          My main expertise is developing apps, games and websites using JavaScript and WebGL.<br>
+          My main expertise is developing apps, games and websites using JavaScript and WebGL.
           My current favorite frameworks, libraries and tools are GreenSock, Lottie, Phaser, Pixi.js, React, React Native, Redux and Three.js.
         </p>
 
