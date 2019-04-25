@@ -31,6 +31,7 @@ export default class extends Page {
           <div class="${styles.description}">
             ${this.renderInformations(project)}
             ${this.renderAwards(project.awards)}
+            ${this.renderApps(project.apps)}
           </div>
 
           <div class="${styles.content} ${styles[`content--${project.template}`]}">
@@ -155,6 +156,30 @@ export default class extends Page {
               <span class="${styles.awards__item__description}">
                 ${award.description}
               </span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `
+  }
+
+  renderApps (apps) {
+    if (!apps) {
+      return ''
+    }
+
+    return `
+      <div class="Item ${styles.apps}">
+        <h2 class="${styles.apps__title}">
+          Stores
+        </h2>
+
+        <div class="${styles.apps__list}">
+          ${map(apps, app => `
+            <div class="${styles.apps__item}">
+              <a href="${app.link}" target="_blank">
+                <img class="${styles.apps__item__image}" src="${app.image}">
+              </a>
             </div>
           `).join('')}
         </div>

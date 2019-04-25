@@ -1,9 +1,38 @@
+import apple from 'assets/work/app-store.svg'
 import awwwards from 'assets/work/awwwards.svg'
+import codrops from 'assets/work/codrops.svg'
 import fwa from 'assets/work/fwa.svg'
+import google from 'assets/work/google-play.svg'
 import lovie from 'assets/work/the-lovie-awards.png'
 
 export default [
   {
+    awards: [
+      {
+        image: awwwards,
+        description: 'Site of The Month Nominee'
+      },
+      {
+        image: awwwards,
+        description: 'Mobile of The Week'
+      },
+      {
+        image: awwwards,
+        description: 'Site of The Day'
+      },
+      {
+        image: awwwards,
+        description: 'Developer Award'
+      },
+      {
+        image: codrops,
+        description: 'Website of The Week'
+      },
+      {
+        image: fwa,
+        description: 'FWA of The Day'
+      }
+    ],
     category: 'Websites',
     client: 'Dominic Berzins',
     color: '#410807',
@@ -61,6 +90,12 @@ export default [
     url: 'https://dominic.bz/'
   },
   {
+    apps: [
+      {
+        image: google,
+        link: 'https://play.google.com/store/apps/details?id=com.timnovelas'
+      }
+    ],
     category: 'Apps',
     client: 'TIM',
     color: '#004692',
@@ -306,6 +341,16 @@ export default [
     url: 'https://www.giftrapper.com/'
   },
   {
+    apps: [
+      {
+        image: apple,
+        link: 'https://itunes.apple.com/br/app/movida-kids/id1337822375'
+      },
+      {
+        image: google,
+        link: 'https://play.google.com/store/apps/details?id=br.com.movida'
+      }
+    ],
     category: 'Games',
     client: 'Movida',
     color: '#ff6633',

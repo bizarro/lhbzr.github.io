@@ -244,11 +244,7 @@
 }
 
 .awards {
-  width: 50%;
-
-  @include media('<very-large') {
-    width: 100%;
-  }
+  width: 100%;
 }
 
 .awards__title {
@@ -284,6 +280,34 @@
 
 .awards__item__description {
   font-size: 14px;
+}
+
+.apps {
+  width: 50%;
+}
+
+.apps__title {
+  color: rgba($color-white, 0.5);
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.apps__list {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.apps__item {
+  &:not(:first-child) {
+    margin-left: 25px;
+  }
+}
+
+.apps__item__image {
+  display: block;
 }
 
 .screenshot {
