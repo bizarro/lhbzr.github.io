@@ -17,6 +17,7 @@ const title = 'Luis Henrique Bizarro — Creative Developer'
 const description = 'Creative Developer based in São Paulo, Brazil with focus on JavaScript and WebGL.'
 
 const noscript = require('./partials/noscript')
+const content = require('./partials/content')
 const analytics = require('./partials/google-analytics')
 const share = `${url}share.jpg`
 
@@ -64,6 +65,7 @@ module.exports = {
       title,
       description,
       noscript,
+      content,
       analytics,
       share
     }),

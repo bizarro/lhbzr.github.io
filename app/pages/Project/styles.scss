@@ -247,39 +247,42 @@
   width: 100%;
 }
 
-.awards__title {
-  color: rgba($color-white, 0.5);
-  font-size: 15px;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
 .awards__list {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  font-size: 0;
 }
 
 .awards__item {
-  @include media('<small') {
-    width: 50%;
+  display: inline-block;
+  font-size: 25px;
+  margin-top: 50px;
+  padding-right: 50px;
+  width: 33.33%;
 
-    &:nth-child(n + 3) {
-      margin-top: 25px;
-    }
+  @include media('<very-large') {
+    width: 50%;
+  }
+
+  @include media('<small') {
+    margin-top: 25px;
+    padding-right: 15px;
+    width: 50%;
   }
 }
 
-.awards__item__image {
+.awards__item__title {
+  color: rgba($color-white, 0.5);
   display: block;
-  height: 15px;
+  font-size: 15px;
+  font-weight: 400;
   margin-bottom: 5px;
+
+  @include media('<small') {
+    font-size: 12px;
+  }
 }
 
 .awards__item__description {
-  font-size: 14px;
+
 }
 
 .apps {

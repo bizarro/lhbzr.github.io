@@ -1,35 +1,31 @@
 import apple from 'assets/work/app-store.svg'
-import awwwards from 'assets/work/awwwards.svg'
-import codrops from 'assets/work/codrops.svg'
-import fwa from 'assets/work/fwa.svg'
 import google from 'assets/work/google-play.svg'
-import lovie from 'assets/work/the-lovie-awards.png'
 
 export default [
   {
     awards: [
       {
-        image: awwwards,
+        title: 'Awwwards',
         description: 'Site of The Month Nominee'
       },
       {
-        image: awwwards,
+        title: 'Awwwards',
         description: 'Mobile of The Week'
       },
       {
-        image: awwwards,
+        title: 'Awwwards',
         description: 'Site of The Day'
       },
       {
-        image: awwwards,
+        title: 'Awwwards',
         description: 'Developer Award'
       },
       {
-        image: codrops,
+        title: 'Codrops',
         description: 'Website of The Week'
       },
       {
-        image: fwa,
+        title: 'FWA',
         description: 'FWA of The Day'
       }
     ],
@@ -83,100 +79,21 @@ export default [
     ],
     date: 'February, 2019',
     image: require(`../assets/work/dominic-berzins.jpg`),
-    role: 'Front End Developer',
+    role: 'Tech Lead',
     slug: 'dominic-berzins',
     technologies: 'GSAP · Prismic · WebGL',
     title: 'Dominic Berzins',
     url: 'https://dominic.bz/'
   },
   {
-    apps: [
-      {
-        image: google,
-        link: 'https://play.google.com/store/apps/details?id=com.timnovelas'
-      }
-    ],
-    category: 'Apps',
-    client: 'TIM',
-    color: '#004692',
-    company: 'Royalpixel',
-    content: [
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/1.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/2.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/3.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/4.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/5.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/6.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/7.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/8.jpg`),
-        height: 2148,
-        width: 1080
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/tim-novelas/9.jpg`),
-        height: 2148,
-        width: 1080
-      }
-    ],
-    date: 'January, 2019',
-    image: require(`../assets/work/tim-novelas.jpg`),
-    role: 'App Developer',
-    slug: 'tim-novelas',
-    technologies: 'React Native',
-    template: 'portrait',
-    title: 'TIM Novelas'
-  },
-  {
     awards: [
       {
-        image: awwwards,
+        title: 'Awwwards',
         description: 'Site of The Day'
       },
       {
-        image: awwwards,
+        title: 'Awwwards',
         description: 'Developer Award'
-      },
-      {
-        image: awwwards,
-        description: 'Honorable Mention'
       }
     ],
     category: 'Websites',
@@ -282,63 +199,6 @@ export default [
     technologies: 'GSAP · Timber · WordPress',
     title: 'Cult',
     url: 'https://cultldn.com/'
-  },
-  {
-    awards: [
-      {
-        image: fwa,
-        description: 'FWA of The Day'
-      }
-    ],
-    category: 'Websites',
-    client: 'Stubhub and TBD',
-    color: '#ff5491',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-gift-rapper/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-gift-rapper/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-gift-rapper/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-gift-rapper/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-gift-rapper/5.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-gift-rapper/6.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'November, 2018',
-    image: require(`../assets/work/the-gift-rapper.jpg`),
-    role: 'Front End Developer',
-    slug: 'the-gift-rapper',
-    technologies: 'GSAP · React',
-    title: 'The Gift Rapper',
-    url: 'https://www.giftrapper.com/'
   },
   {
     apps: [
@@ -651,11 +511,11 @@ export default [
   {
     awards: [
       {
-        image: fwa,
+        title: 'FWA',
         description: 'FWA of The Day'
       },
       {
-        image: lovie,
+        title: 'Lovie Awards',
         description: 'Best Visual Design (Silver)'
       }
     ],
@@ -749,7 +609,7 @@ export default [
   {
     awards: [
       {
-        image: fwa,
+        title: 'FWA',
         description: 'FWA of The Day'
       }
     ],
@@ -1094,6 +954,7 @@ export default [
     image: require(`../assets/work/fiap-next.jpg`),
     role: 'Tech Lead',
     slug: 'fiap-next',
+    technologies: 'GSAP · Timber · WordPress',
     title: 'FIAP NEXT'
   },
   {

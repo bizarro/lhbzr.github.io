@@ -144,14 +144,12 @@ export default class extends Page {
 
     return `
       <div class="Item ${styles.awards}">
-        <h2 class="${styles.awards__title}">
-          Awards
-        </h2>
-
         <div class="${styles.awards__list}">
           ${map(awards, award => `
             <div class="${styles.awards__item}">
-              <img class="${styles.awards__item__image}" src="${award.image}">
+              <span class="${styles.awards__item__title}">
+                ${award.title}
+              </span>
 
               <span class="${styles.awards__item__description}">
                 ${award.description}

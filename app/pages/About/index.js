@@ -46,8 +46,11 @@ export default class extends Page {
         </h1>
 
         <p class="Description ${styles.description}">
-          I'm a 23 y/o Creative Developer based in São Paulo, Brazil.<br>
-          I'm currently working remotely at UNIT9 and I'm also a Young Jury member at Awwwards.
+          I'm a 23 y/o Front End Developer and WebGL Developer based in São Paulo, Brazil. I'm currently working remotely with Creative Development at UNIT9 — Ad Age 2019 Production Company of the Year.
+        </p>
+
+        <p class="Description ${styles.description}">
+          I'm also a Young Jury member of Awwwards and previously I was a Volunteer Editor for Tumblr #Gaming tag until featured tags were discontinued.
         </p>
 
         <p class="Description ${styles.description}">

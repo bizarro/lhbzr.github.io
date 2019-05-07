@@ -4,10 +4,10 @@ import {
   AdditiveBlending,
   Color,
   Group,
+  LinearFilter,
   Mesh,
   MeshBasicMaterial,
   PlaneBufferGeometry,
-  RepeatWrapping,
   ShaderMaterial,
   Texture,
   TextureLoader
@@ -24,10 +24,10 @@ import OverlayVertexShader from '../../shaders/overlay-vert.glsl'
 import TitleFragmentShader from '../../shaders/title-frag.glsl'
 import TitleVertexShader from '../../shaders/title-vert.glsl'
 
-import '../../utils/canvas'
+import { trim } from 'utils/canvas'
 
 export default class Media extends Group {
-  constructor ({ color, index, image, size, slug, title }) {
+  constructor ({ color, index, image, renderer, size, slug, title }) {
     super()
 
     this.isActive = false
@@ -36,15 +36,24 @@ export default class Media extends Group {
 
     this.color = new Color(color)
     this.index = index
-    this.image = new TextureLoader().load(image)
     this.slug = slug
+    this.renderer = renderer
     this.text = title
+
+    this.image = new TextureLoader().load(image, () => {
+      this.image.generateMipmaps = false
+      this.image.minFilter = LinearFilter
+      this.image.needsUpdate = true
+      this.image.premultiplyAlpha = true
+
+      this.renderer.setTexture2D(this.image)
+    })
 
     this.height = size * 0.563333333 // Ratio
     this.multiplier = 10
     this.noise = 50
     this.opacity = 0
-    this.padding = size * 0.05
+    this.padding = size * 0.1
     this.width = size
 
     this.position.x += index * (this.width + this.padding)
@@ -138,23 +147,26 @@ export default class Media extends Group {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
 
-    canvas.height = 64
-    canvas.width = 512
+    canvas.height = window.innerHeight
+    canvas.width = window.innerWidth
 
     context.fillStyle = '#fff'
-    context.font = '40px Borda'
+    context.font = '80px Borda'
     context.textAlign = 'center'
     context.textBaseline = 'middle'
     context.fillText(this.text, canvas.width / 2, canvas.height / 2)
 
-    this.titleGeometry = new PlaneBufferGeometry(canvas.width / 4, canvas.height / 4, 100, 100)
+    const canvasTrimmed = trim(canvas)
 
-    this.titleTexture = new Texture(canvas)
+    this.titleGeometry = new PlaneBufferGeometry(canvasTrimmed.width / 8, canvasTrimmed.height / 8, 100, 100)
+
+    this.titleTexture = new Texture(canvasTrimmed)
+    this.titleTexture.generateMipmaps = false
+    this.titleTexture.minFilter = LinearFilter
     this.titleTexture.needsUpdate = true
     this.titleTexture.premultiplyAlpha = true
-    this.titleTexture.repeat.set(1, 1)
-    this.titleTexture.wrapS = RepeatWrapping
-    this.titleTexture.wrapT = RepeatWrapping
+
+    this.renderer.setTexture2D(this.titleTexture)
 
     this.titleMaterial = new ShaderMaterial({
       blending: AdditiveBlending,

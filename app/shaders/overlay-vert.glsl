@@ -9,5 +9,11 @@ varying vec3 location;
 void main() {
   location = position;
 
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  float displacement = pnoise(position * 0.005 + time, vec3(noise));
+
+  vec3 newPosition = position;
+
+  newPosition.z += 20.0 * displacement;
+
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
 }

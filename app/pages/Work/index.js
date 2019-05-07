@@ -22,7 +22,7 @@ import Projects from '../../data/Work'
 import Raycaster from './Raycaster'
 
 export default class extends Page {
-  constructor ({ camera, size }) {
+  constructor ({ camera, renderer, size }) {
     super({
       element: null,
       name: 'Work',
@@ -40,6 +40,7 @@ export default class extends Page {
         color: work.color,
         index,
         image: work.image,
+        renderer,
         size,
         slug: work.slug,
         title: work.title
@@ -133,7 +134,7 @@ export default class extends Page {
         opacity: this.opacity
       })
 
-      if (index === this.index) {
+      if (index === this.index || index === this.index - 1 || index === this.index + 1) {
         child.enable()
       } else {
         child.disable()

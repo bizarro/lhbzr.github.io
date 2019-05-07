@@ -46,6 +46,8 @@ class App {
     this.height = window.innerHeight
     this.width = window.innerWidth
 
+    document.body.removeChild(document.querySelector('.app'))
+
     this.createCursor()
     this.createPreloader()
 
@@ -157,6 +159,7 @@ class App {
   createWork () {
     this.work = new Work({
       camera: this.camera,
+      renderer: this.renderer,
       size: Math.min(this.size * 0.8, 300)
     })
 
