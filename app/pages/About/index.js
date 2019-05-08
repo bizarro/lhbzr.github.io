@@ -1,11 +1,12 @@
 import { Expo, TimelineMax } from 'gsap'
 import { each, map } from 'lodash'
 
-import Page from '../../classes/Page'
+import Page from 'classes/Page'
 
-import { split, calculate } from '../../utils/text'
+import { split, calculate } from 'utils/text'
 
 import styles from './styles.scss'
+import view from './view.pug'
 
 export default class extends Page {
   constructor () {
@@ -39,44 +40,10 @@ export default class extends Page {
     ]
 
     this.element.className = `About ${styles.about}`
-    this.element.innerHTML = `
-      <div class="Wrapper ${styles.wrapper}">
-        <h1 class="Title ${styles.title}">
-          Hey, I'm Bizarro.
-        </h1>
-
-        <p class="Description ${styles.description}">
-          I'm a 23 y/o Front End Developer and WebGL Developer based in São Paulo, Brazil. I'm currently working remotely with Creative Development at UNIT9 — Ad Age 2019 Production Company of the Year.
-        </p>
-
-        <p class="Description ${styles.description}">
-          I'm also a Young Jury member of Awwwards and previously I was a Volunteer Editor for Tumblr #Gaming tag until featured tags were discontinued.
-        </p>
-
-        <p class="Description ${styles.description}">
-          My main expertise is developing apps, games and websites using JavaScript and WebGL.
-          My current favorite frameworks, libraries and tools are GreenSock, Lottie, Phaser, Pixi.js, React, React Native, Redux and Three.js.
-        </p>
-
-        <p class="Description ${styles.description}">
-          <strong>I'm available for freelance work.</strong>
-        </p>
-
-        <div class="Social ${styles.social}">
-          <span class="${styles.social__title}">Get In Touch:</span>
-
-          <ul class="${styles.social__list}">
-            ${map(socials, social => `
-              <li class="${styles.social__item}">
-                <a href="${social.url}" class="${styles.social__link}" target="_blank">
-                  ${social.label}
-                </a>
-              </li>
-            `).join('')}
-          </ul>
-        </div>
-      </div>
-    `.replace(/ {2}/g, '')
+    this.element.innerHTML = view({
+      socials,
+      styles
+    })
 
     this.elements = {
       title: this.element.querySelector('.Title'),

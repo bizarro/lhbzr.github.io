@@ -7,6 +7,7 @@ import Projects from '../../data/Work'
 import { split } from '../../utils/text'
 
 import styles from './styles.scss'
+import view from './view.pug'
 
 export default class extends Page {
   constructor () {
@@ -17,29 +18,10 @@ export default class extends Page {
     })
 
     this.element.className = `Project ${styles.case}`
-    this.element.innerHTML = `
-      ${map(Projects, project => `
-        <div id="${project.slug}" class="Wrapper ${styles.wrapper}">
-          <header class="Header ${styles.header}">
-            <h1 class="Title ${styles.title}">
-              ${project.title}
-            </h1>
-
-            ${this.renderButton(project.url)}
-          </header>
-
-          <div class="${styles.description}">
-            ${this.renderInformations(project)}
-            ${this.renderAwards(project.awards)}
-            ${this.renderApps(project.apps)}
-          </div>
-
-          <div class="${styles.content} ${styles[`content--${project.template}`]}">
-            ${this.renderContent(project.content)}
-          </div>
-        </div>
-      `).join('')}
-    `
+    this.element.innerHTML = view({
+      projects: Projects,
+      styles
+    })
 
     this.elements = {
       wrapper: this.element.querySelectorAll('.Wrapper'),
@@ -50,207 +32,6 @@ export default class extends Page {
     this.projects = []
 
     this.setup()
-  }
-
-  renderButton (url) {
-    if (!url) {
-      return ''
-    }
-
-    return `
-      <a href="${url}" target="_blank" class="${styles.button}">
-        <span class="ButtonTop ${styles.button__border} ${styles['button__border--top']}"></span>
-        <span class="ButtonRight ${styles.button__border} ${styles['button__border--right']}"></span>
-        <span class="ButtonBottom ${styles.button__border} ${styles['button__border--bottom']}"></span>
-        <span class="ButtonLeft ${styles.button__border} ${styles['button__border--left']}"></span>
-
-        <span class="ButtonText">Launch Project</span>
-
-        <span class="ButtonArrow ${styles.button__arrow}"></span>
-      </a>
-    `
-  }
-
-  renderInformations (project) {
-    return `
-      <div class="${styles.information}">
-        <div class="Item ${styles.information__item}">
-          <strong class="${styles.information__item__label}">
-            Category
-          </strong>
-
-          <span class="${styles.information__item__description}">
-            ${project.category}
-          </span>
-        </div>
-
-        <div class="Item ${styles.information__item}">
-          <strong class="${styles.information__item__label}">
-            Date
-          </strong>
-
-          <span class="${styles.information__item__description}">
-            ${project.date}
-          </span>
-        </div>
-
-        <div class="Item ${styles.information__item}">
-          <strong class="${styles.information__item__label}">
-            Role
-          </strong>
-
-          <span class="${styles.information__item__description}">
-            ${project.role}
-          </span>
-        </div>
-
-        <div class="Item ${styles.information__item}">
-          <strong class="${styles.information__item__label}">
-            Company
-          </strong>
-
-          <span class="${styles.information__item__description}">
-            ${project.company}
-          </span>
-        </div>
-
-        <div class="Item ${styles.information__item}">
-          <strong class="${styles.information__item__label}">
-            Client
-          </strong>
-
-          <span class="${styles.information__item__description}">
-            ${project.client}
-          </span>
-        </div>
-
-        <div class="Item ${styles.information__item}">
-          <strong class="${styles.information__item__label}">
-            Technologies
-          </strong>
-
-          <span class="${styles.information__item__description}">
-            ${project.technologies}
-          </span>
-        </div>
-      </div>
-    `
-  }
-
-  renderAwards (awards) {
-    if (!awards) {
-      return ''
-    }
-
-    return `
-      <div class="Item ${styles.awards}">
-        <div class="${styles.awards__list}">
-          ${map(awards, award => `
-            <div class="${styles.awards__item}">
-              <span class="${styles.awards__item__title}">
-                ${award.title}
-              </span>
-
-              <span class="${styles.awards__item__description}">
-                ${award.description}
-              </span>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `
-  }
-
-  renderApps (apps) {
-    if (!apps) {
-      return ''
-    }
-
-    return `
-      <div class="Item ${styles.apps}">
-        <h2 class="${styles.apps__title}">
-          Stores
-        </h2>
-
-        <div class="${styles.apps__list}">
-          ${map(apps, app => `
-            <div class="${styles.apps__item}">
-              <a href="${app.link}" target="_blank">
-                <img class="${styles.apps__item__image}" src="${app.image}">
-              </a>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `
-  }
-
-  renderContent (content) {
-    const html = content.map(content => {
-      if (content.type === 'screenshot') {
-        return `
-          <div class="Media ${styles.screenshot}">
-            <div class="${styles.screenshot__box}" style="max-width: ${content.width}px;">
-              <span class="Loader ${styles.screenshot__loader}">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-              <span
-                class="${styles.screenshot__placeholder}"
-                style="padding-top: ${content.height / content.width * 100}%;"
-              >
-                <img data-src="${content.source}" class="Image ${styles.screenshot__image}">
-              </span>
-            </div>
-          </div>
-        `
-      }
-
-      if (content.type === 'portrait') {
-        return `
-          <div class="Media ${styles.portrait}">
-            <div class="${styles.portrait__box}" style="max-width: ${content.width}px;">
-              <span class="Loader ${styles.portrait__loader}">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-
-              <span
-                class="${styles.portrait__placeholder}"
-                style="padding-top: ${content.height / content.width * 100}%;"
-              >
-                <img data-src="${content.source}" class="Image ${styles.portrait__image}">
-              </span>
-            </div>
-          </div>
-        `
-      }
-
-      if (content.type === 'landscape') {
-        return `
-          <div class="Media ${styles.landscape}">
-            <div class="${styles.landscape__box}" style="max-width: ${content.width}px;">
-              <span class="Loader ${styles.landscape__loader}">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-
-              <span
-                class="${styles.landscape__placeholder}"
-                style="padding-top: ${content.height / content.width * 100}%;"
-              >
-                <img data-src="${content.source}" class="Image ${styles.landscape__image}">
-              </span>
-            </div>
-          </div>
-        `
-      }
-    })
-
-    return html.join('')
   }
 
   setup () {

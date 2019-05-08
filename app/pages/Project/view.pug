@@ -1,0 +1,94 @@
+each project, index in projects
+  div(class=`Wrapper ${styles.wrapper}` id=project.slug)
+    header(class=`Header ${styles.header}`)
+      h1(class=`Title ${styles.title}`)=project.title
+
+      if project.url
+        a(class=styles.button href=project.url target="_blank")
+          span(class=`ButtonTop ${styles.button__border} ${styles['button__border--top']}`)
+          span(class=`ButtonRight ${styles.button__border} ${styles['button__border--right']}`)
+          span(class=`ButtonBottom ${styles.button__border} ${styles['button__border--bottom']}`)
+          span(class=`ButtonLeft ${styles.button__border} ${styles['button__border--left']}`)
+
+          span(class=`ButtonText`) Launch Project
+
+          span(class=`ButtonArrow ${styles.button__arrow}`)
+
+    div(class=styles.description)
+      div(class=styles.information)
+        div(class=`Item ${styles.information__item}`)
+          strong(class=styles.information__item__label) Category
+          span(class=styles.information__item__description)=project.category
+
+        div(class=`Item ${styles.information__item}`)
+          strong(class=styles.information__item__label) Date
+          span(class=styles.information__item__description)=project.date
+
+        div(class=`Item ${styles.information__item}`)
+          strong(class=styles.information__item__label) Role
+          span(class=styles.information__item__description)=project.role
+
+        div(class=`Item ${styles.information__item}`)
+          strong(class=styles.information__item__label) Company
+          span(class=styles.information__item__description)=project.company
+
+        div(class=`Item ${styles.information__item}`)
+          strong(class=styles.information__item__label) Client
+          span(class=styles.information__item__description)=project.client
+
+        div(class=`Item ${styles.information__item}`)
+          strong(class=styles.information__item__label) Technologies
+          span(class=styles.information__item__description)=project.technologies
+
+      if project.awards
+        div(class=styles.awards)
+          div(class=styles.awards__list)
+            each award, index in project.awards
+              div(class=`Item ${styles.awards__item}`)
+                span(class=styles.awards__item__title)=award.title
+                span(class=styles.awards__item__description)=award.description
+
+      if project.apps
+        div(class=`Item ${styles.apps}`)
+          h2(class=styles.apps__title) Stores
+
+          div(class=styles.apps__list)
+            each app, index in project.apps
+              div(class=styles.apps__item)
+                a(href=app.link target="_blank")
+                  img(class=styles.apps__item__image src=app.image)
+
+    div(class=`${styles.content} ${styles[`content--${project.template}`]}`)
+      each content, index in project.content
+        if content.type === 'screenshot'
+          div(class=`Media ${styles.screenshot}`)
+            div(class=styles.screenshot__box style=`max-width: ${content.width}px;`)
+              span(class=`Loader ${styles.screenshot__loader}`)
+                span
+                span
+                span
+
+              span(class=styles.screenshot__placeholder style=`padding-top: ${content.height / content.width * 100}%;`)
+                img(class=`Image ${styles.screenshot__image}` data-src=content.source)
+
+        if (content.type === 'portrait')
+          div(class=`Media ${styles.portrait}`)
+            div(class=styles.portrait__box style=`max-width: ${content.width}px;`)
+              span(class=`Loader ${styles.portrait__loader}`)
+                span
+                span
+                span
+
+              span(class=styles.portrait__placeholder style=`padding-top: ${content.height / content.width * 100}%;`)
+                img(class=`Image ${styles.portrait__image}` data-src=content.source)
+
+        if (content.type === 'landscape')
+          div(class=`Media ${styles.landscape}`)
+            div(class=styles.landscape__box style=`max-width: ${content.width}px;`)
+              span(class=`Loader ${styles.landscape__loader}`)
+                span
+                span
+                span
+
+              span(class=styles.landscape__placeholder style=`padding-top: ${content.height / content.width * 100}%;`)
+                img(class=`Image ${styles.landscape__image}` data-src=content.source)

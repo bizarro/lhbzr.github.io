@@ -12,15 +12,6 @@ const dirApp = path.join(__dirname, 'app')
 const dirAssets = path.join(__dirname, 'assets')
 const dirNode = 'node_modules'
 
-const url = 'https://lhbzr.com/'
-const title = 'Luis Henrique Bizarro — Creative Developer'
-const description = 'Creative Developer based in São Paulo, Brazil with focus on JavaScript and WebGL.'
-
-const noscript = require('./partials/noscript')
-const content = require('./partials/content')
-const analytics = require('./partials/google-analytics')
-const share = `${url}share.jpg`
-
 module.exports = {
   entry: {
     vendor: [
@@ -59,26 +50,11 @@ module.exports = {
     ]),
 
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.join(__dirname, 'index.html'),
-      url,
-      title,
-      description,
-      noscript,
-      content,
-      analytics,
-      share
+      template: path.join(__dirname, 'index.pug')
     }),
 
     new HtmlWebpackPlugin({
-      filename: '404.html',
-      template: path.join(__dirname, '404.html'),
-      url,
-      title,
-      description,
-      noscript,
-      analytics,
-      share
+      template: path.join(__dirname, '404.pug')
     }),
 
     new MiniCssExtractPlugin({
@@ -90,16 +66,18 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.pug$/,
+        use: ['pug-loader']
+      },
+
+      {
         test: /\.js$/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
               [
-                '@babel/preset-env',
-                {
-                  useBuiltIns: 'entry'
-                }
+                '@babel/preset-env'
               ]
             ]
           }
@@ -130,11 +108,6 @@ module.exports = {
             }
           }
         ]
-      },
-
-      {
-        test: /\.ejs$/,
-        loader: 'ejs-loader'
       },
 
       {

@@ -193,8 +193,7 @@
 
   @include media('<small') {
     margin-top: 25px;
-    padding-right: 15px;
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -263,9 +262,9 @@
   }
 
   @include media('<small') {
+    font-size: 15px;
     margin-top: 25px;
-    padding-right: 15px;
-    width: 50%;
+    width: 100%;
   }
 }
 
