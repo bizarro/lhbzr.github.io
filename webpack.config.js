@@ -50,13 +50,13 @@ module.exports = {
     ]),
 
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.pug'),
-      outputName: 'index'
+      filename: 'index.html',
+      template: path.join(__dirname, 'index.pug')
     }),
 
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '404.pug'),
-      outputName: '404'
+      filename: '404.html',
+      template: path.join(__dirname, '404.pug')
     }),
 
     new MiniCssExtractPlugin({
