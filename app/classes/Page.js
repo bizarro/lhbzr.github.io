@@ -95,9 +95,9 @@ export default class extends EventEmitter {
     if (!this.isDown) return
 
     const total = this.element.clientHeight - window.innerHeight
-    const x = event.touches ? event.touches[0].clientY : event.clientY
+    const y = event.touches ? event.touches[0].clientY : event.clientY
 
-    const distance = (this.start - x) * 2
+    const distance = (this.start - y) * 2
 
     this.scroll.target = this.scroll.position + distance
     this.scroll.target = clamp(this.scroll.target, 0, total)

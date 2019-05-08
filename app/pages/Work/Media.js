@@ -147,8 +147,8 @@ export default class Media extends Group {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
 
-    canvas.height = window.innerHeight
-    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight * 3
+    canvas.width = window.innerWidth * 3
 
     context.fillStyle = '#fff'
     context.font = '80px Borda'
