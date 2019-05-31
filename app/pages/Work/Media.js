@@ -13,16 +13,16 @@ import {
   TextureLoader
 } from 'three'
 
-import { Detection } from '../../classes/Detection'
+import { Detection } from 'classes/Detection'
 
-import ImageFragmentShader from '../../shaders/image-frag.glsl'
-import ImageVertexShader from '../../shaders/image-vert.glsl'
+import ImageFragmentShader from 'shaders/image-frag.glsl'
+import ImageVertexShader from 'shaders/image-vert.glsl'
 
-import OverlayFragmentShader from '../../shaders/overlay-frag.glsl'
-import OverlayVertexShader from '../../shaders/overlay-vert.glsl'
+import OverlayFragmentShader from 'shaders/overlay-frag.glsl'
+import OverlayVertexShader from 'shaders/overlay-vert.glsl'
 
-import TitleFragmentShader from '../../shaders/title-frag.glsl'
-import TitleVertexShader from '../../shaders/title-vert.glsl'
+import TitleFragmentShader from 'shaders/title-frag.glsl'
+import TitleVertexShader from 'shaders/title-vert.glsl'
 
 import { trim } from 'utils/canvas'
 

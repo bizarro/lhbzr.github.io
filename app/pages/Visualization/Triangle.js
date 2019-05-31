@@ -10,10 +10,6 @@ import {
   TweenMax
 } from 'gsap'
 
-import {
-  randomInteger
-} from '../../utils/math'
-
 export default class Triangle extends Object3D {
   constructor ({ index }) {
     super()

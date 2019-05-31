@@ -1,7 +1,5 @@
 import { Raycaster } from 'three'
 
-import { inRange } from 'lodash'
-
 export default class Raycast extends Raycaster {
   constructor({ camera, objects }) {
     super()

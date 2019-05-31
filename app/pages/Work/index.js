@@ -1,4 +1,4 @@
-import Page from '../../classes/Page'
+import Page from 'classes/Page'
 
 import {
   Group,
@@ -18,7 +18,7 @@ import {
 } from 'gsap'
 
 import Media from './Media'
-import Projects from '../../data/Work'
+import Projects from 'data/Work'
 import Raycaster from './Raycaster'
 
 export default class extends Page {

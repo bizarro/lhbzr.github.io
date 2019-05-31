@@ -1,5 +1,5 @@
 import { Expo, TimelineMax } from 'gsap'
-import { each, map } from 'lodash'
+import { each } from 'lodash'
 
 import Page from 'classes/Page'
 

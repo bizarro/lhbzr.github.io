@@ -1,10 +1,10 @@
 import { Expo, TimelineMax } from 'gsap'
-import { each, filter, first, map } from 'lodash'
+import { each, filter, first } from 'lodash'
 
-import Page from '../../classes/Page'
-import Projects from '../../data/Work'
+import Page from 'classes/Page'
+import Projects from 'data/Work'
 
-import { split } from '../../utils/text'
+import { split } from 'utils/text'
 
 import styles from './styles.scss'
 import view from './view.pug'

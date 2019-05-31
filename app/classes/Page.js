@@ -78,7 +78,7 @@ export default class extends EventEmitter {
 
     if (delta < 0) speed *= -1
 
-    const total = this.element.clientHeight - window.innerHeight
+    const total = this.element.childNodes[0].clientHeight - window.innerHeight
 
     this.scroll.target += speed
     this.scroll.target = clamp(this.scroll.target, 0, total)
@@ -94,7 +94,7 @@ export default class extends EventEmitter {
   onScrollTouchMove (event) {
     if (!this.isDown) return
 
-    const total = this.element.clientHeight - window.innerHeight
+    const total = this.element.childNodes[0].clientHeight - window.innerHeight
     const y = event.touches ? event.touches[0].clientY : event.clientY
 
     const distance = (this.start - y) * 2

@@ -1,4 +1,4 @@
-@import '../../styles/index';
+@import "../../styles/index";
 
 .about {
   align-items: center;
@@ -21,11 +21,11 @@
 
 .wrapper {
   margin: auto;
-  max-width: 635px;
+  max-width: 525px;
   padding: 150px 25px;
   position: relative;
 
-  @include media('<small') {
+  @include media("<small") {
     padding: 150px 25px 50px;
   }
 }
@@ -40,7 +40,7 @@
     vertical-align: top;
   }
 
-  @include media('<small') {
+  @include media("<small") {
     font-size: 30px;
   }
 }
@@ -58,7 +58,7 @@
     margin-top: 25px;
   }
 
-  @include media('<small') {
+  @include media("<small") {
     font-size: 15px;
 
     br {
@@ -69,10 +69,7 @@
 
 .social {
   font-size: 0;
-
-  @include media('<small') {
-    margin-top: 25px;
-  }
+  margin-top: 25px;
 }
 
 .social__title {
@@ -82,7 +79,7 @@
   margin-right: 10px;
   vertical-align: middle;
 
-  @include media('<small') {
+  @include media("<small") {
     display: block;
     margin-bottom: 5px;
     margin-right: 0;

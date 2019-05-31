@@ -1,9 +1,9 @@
 import { Group } from 'three'
 
-import Page from '../../classes/Page'
-import Triangle from './Triangle'
+import { Analyser } from 'classes/Analyser'
+import Page from 'classes/Page'
 
-import { Analyser } from '../../classes/Analyser'
+import Triangle from './Triangle'
 
 export default class Visualization extends Page {
   constructor () {
