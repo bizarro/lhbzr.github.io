@@ -17,6 +17,11 @@
     opacity: 1;
     visibility: visible;
   }
+
+  @include media("<small") {
+    display: block;
+    height: auto;
+  }
 }
 
 .wrapper {
