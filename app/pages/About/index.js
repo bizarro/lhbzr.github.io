@@ -41,6 +41,7 @@ export default class extends Page {
 
     this.element.className = `About ${styles.about}`
     this.element.innerHTML = view({
+      title: 'Title',
       socials,
       styles
     })
