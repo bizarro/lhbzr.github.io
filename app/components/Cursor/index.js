@@ -66,14 +66,15 @@ export default class Dot {
   loop () {
     this.opacity.value = lerp(this.opacity.value, this.opacity.current, 0.1)
     this.scale.value = lerp(this.scale.value, this.scale.current, 0.1)
-    this.x.value = lerp(this.x.value, this.x.current, 0.2)
-    this.y.value = lerp(this.y.value, this.y.current, 0.2)
+    this.x.value = lerp(this.x.value, this.x.current, 0.4)
+    this.y.value = lerp(this.y.value, this.y.current, 0.4)
 
     TweenMax.set(this.element, {
       opacity: this.opacity.value,
       scale: this.scale.value,
       x: this.x.value,
-      y: this.y.value
+      y: this.y.value,
+      zIndex: 100
     })
 
     this.frame = window.requestAnimationFrame(this.loop)

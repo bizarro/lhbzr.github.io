@@ -18,8 +18,12 @@ export default class extends Page {
 
     const socials = [
       {
-        label: 'Email',
-        url: 'mailto:hello@lhbzr.com'
+        label: 'Twitter',
+        url: 'https://www.twitter.com/lhbzr/'
+      },
+      {
+        label: 'Tumblr',
+        url: 'http://lhbzr.tumblr.com/'
       },
       {
         label: 'GitHub',
@@ -30,12 +34,8 @@ export default class extends Page {
         url: 'https://www.linkedin.com/in/lhbzr/'
       },
       {
-        label: 'Tumblr',
-        url: 'http://lhbzr.tumblr.com/'
-      },
-      {
-        label: 'Twitter',
-        url: 'https://www.twitter.com/lhbzr/'
+        label: 'Email',
+        url: 'mailto:hello@lhbzr.com'
       }
     ]
 

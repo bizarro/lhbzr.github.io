@@ -38,8 +38,8 @@ class AnalyserManager {
     this.context = new (window.AudioContext || window.webkitAudioContext)()
 
     this.analyser = this.context.createAnalyser()
-    this.analyser.fftSize = 1024
-    this.analyser.smoothingTimeConstant = 0.7
+    this.analyser.fftSize = 512
+    this.analyser.smoothingTimeConstant = 0.5
     this.analyser.connect(this.context.destination)
 
     this.src = this.context.createMediaElementSource(this.audio)

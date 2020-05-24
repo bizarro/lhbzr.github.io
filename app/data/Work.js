@@ -3,202 +3,447 @@ import google from 'assets/work/google-play.svg'
 
 export default [
   {
-    awards: [
+    color: '#be9dcc',
+    image: require('../assets/work/studio-maertens.jpg'),
+    slug: 'studio-maertens',
+    title: 'Studio Maertens',
+    information: [
       {
-        title: 'Awwwards',
-        description: 'Site of The Month Nominee'
+        label: 'Category',
+        text: 'Website'
       },
       {
-        title: 'Awwwards',
-        description: 'Mobile of The Week'
+        label: 'Date',
+        text: 'April 2020'
       },
       {
-        title: 'Awwwards',
-        description: 'Site of The Day'
+        label: 'Technologies',
+        text: 'GSAP · Prismic · WebGL'
       },
       {
-        title: 'Awwwards',
-        description: 'Developer Award'
-      },
-      {
-        title: 'Codrops',
-        description: 'Website of The Week'
-      },
-      {
-        title: 'FWA',
-        description: 'FWA of The Day'
+        label: 'Client',
+        text: 'Studio Maertens'
       }
     ],
-    category: 'Websites',
-    client: 'Dominic Berzins',
-    color: '#410807',
-    company: 'Dominic Berzins',
+    url: 'https://studiomaertens.com/',
     content: [
       {
         type: 'screenshot',
-        source: require(`../assets/case/dominic-berzins/1.jpg`),
+        source: require('../assets/case/studio-maertens/1.jpg'),
         height: 1080,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/dominic-berzins/2.jpg`),
+        source: require('../assets/case/studio-maertens/2.jpg'),
         height: 1080,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/dominic-berzins/3.jpg`),
+        source: require('../assets/case/studio-maertens/3.jpg'),
         height: 1080,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/dominic-berzins/4.jpg`),
+        source: require('../assets/case/studio-maertens/4.jpg'),
         height: 1080,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/dominic-berzins/5.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/dominic-berzins/6.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/dominic-berzins/7.jpg`),
+        source: require('../assets/case/studio-maertens/5.jpg'),
         height: 1080,
         width: 1920
       }
-    ],
-    date: 'February, 2019',
-    image: require(`../assets/work/dominic-berzins.jpg`),
-    role: 'Tech Lead',
-    slug: 'dominic-berzins',
-    technologies: 'GSAP · Prismic · WebGL',
-    title: 'Dominic Berzins',
-    url: 'https://dominic.bz/'
+    ]
   },
   {
-    awards: [
+    color: '#d3b509',
+    image: require('../assets/work/erika-moreira.jpg'),
+    slug: 'erika-moreira',
+    title: 'Érika Moreira',
+    information: [
       {
-        title: 'Awwwards',
-        description: 'Site of The Day'
+        label: 'Category',
+        text: 'Website'
       },
       {
-        title: 'Awwwards',
-        description: 'Developer Award'
+        label: 'Date',
+        text: 'February 2020'
+      },
+      {
+        label: 'Technologies',
+        text: 'Canvas · GSAP · Prismic'
+      },
+      {
+        label: 'Client',
+        text: 'Érika Moreira'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Site of The Day'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Developer Award'
+      },
+      {
+        label: 'CSS Design Awards',
+        text: 'Site of The Day'
       }
     ],
-    category: 'Websites',
-    client: 'Cult',
-    color: '#fff',
-    company: 'LHBZR',
+    url: 'https://erikamoreira.co/',
     content: [
       {
         type: 'screenshot',
-        source: require(`../assets/case/cult/1.jpg`),
+        source: require('../assets/case/erika-moreira/1.jpg'),
         height: 1080,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/cult/2.jpg`),
+        source: require('../assets/case/erika-moreira/2.jpg'),
         height: 1080,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/cult/3.jpg`),
+        source: require('../assets/case/erika-moreira/3.jpg'),
         height: 1080,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/cult/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/5.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/6.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/7.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/8.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/9.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/10.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/11.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/12.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/13.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/14.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/cult/15.jpg`),
+        source: require('../assets/case/erika-moreira/4.jpg'),
         height: 1080,
         width: 1920
       }
+    ]
+  },
+  {
+    color: '#404642',
+    image: require('../assets/work/bruno-arizio.jpg'),
+    slug: 'bruno-arizio',
+    title: 'Bruno Arizio',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'November 2019'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP · Prismic · WebGL'
+      },
+      {
+        label: 'Client',
+        text: 'Bruno Arizio'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Site of The Day'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Developer Award'
+      },
+      {
+        label: 'Codrops',
+        text: 'Website of The Week'
+      },
+      {
+        label: 'FWA',
+        text: 'FWA of The Day'
+      }
     ],
-    date: 'December, 2018',
-    image: require(`../assets/work/cult.jpg`),
-    role: 'Tech Lead',
+    url: 'https://brunoarizio.com/',
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/5.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/6.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/7.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/8.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/bruno-arizio/9.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
+  },
+  {
+    color: '#410807',
+    image: require('../assets/work/dominic-berzins.jpg'),
+    slug: 'dominic-berzins',
+    title: 'Dominic Berzins',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'February 2019'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP · Prismic · WebGL'
+      },
+      {
+        label: 'Client',
+        text: 'Dominic Berzins'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Site of The Year Nominee'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Site of The Month Nominee'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Mobile of The Week'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Site of The Day'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Developer Award'
+      },
+      {
+        label: 'Codrops',
+        text: 'Website of The Week'
+      },
+      {
+        label: 'CSS Design Awards',
+        text: 'Site of The Day'
+      },
+      {
+        label: 'FWA',
+        text: 'FWA of The Day'
+      }
+    ],
+    url: 'https://dominic.bz/',
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/dominic-berzins/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/dominic-berzins/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/dominic-berzins/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/dominic-berzins/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/dominic-berzins/5.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/dominic-berzins/6.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/dominic-berzins/7.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
+  },
+  {
+    color: '#fff',
+    image: require('../assets/work/cult.jpg'),
     slug: 'cult',
-    technologies: 'GSAP · Timber · WordPress',
     title: 'Cult',
-    url: 'https://cultldn.com/'
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'December 2018'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP · Timber · WordPress'
+      },
+      {
+        label: 'Client',
+        text: 'Cult'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Site of The Day'
+      },
+      {
+        label: 'Awwwards',
+        text: 'Developer Award'
+      }
+    ],
+    url: 'https://cultldn.com/',
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/5.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/6.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/7.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/8.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/9.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/10.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/11.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/12.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/13.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/14.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/cult/15.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
   },
   {
     apps: [
@@ -211,794 +456,1018 @@ export default [
         link: 'https://play.google.com/store/apps/details?id=br.com.movida'
       }
     ],
-    category: 'Games',
-    client: 'Movida',
     color: '#ff6633',
-    company: 'Royalpixel',
-    content: [
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/1.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/2.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/3.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/4.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/5.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/6.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/7.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/8.jpg`),
-        height: 667,
-        width: 375
-      },
-      {
-        type: 'portrait',
-        source: require(`../assets/case/movida-kids/9.jpg`),
-        height: 667,
-        width: 375
-      }
-    ],
-    date: 'September, 2018',
-    image: require(`../assets/work/movida-kids.jpg`),
-    role: 'Tech Lead',
+    image: require('../assets/work/movida-kids.jpg'),
     slug: 'movida-kids',
-    technologies: 'Phaser · React Native',
+    title: 'Movida Kids',
+    information: [
+      {
+        label: 'Category',
+        text: 'Game'
+      },
+      {
+        label: 'Date',
+        text: 'September 2018'
+      },
+      {
+        label: 'Technologies',
+        text: 'GLSL · GSAP · React · Three.js'
+      },
+      {
+        label: 'Company',
+        text: 'Royalpixel'
+      },
+      {
+        label: 'Brand',
+        text: 'Movida'
+      }
+    ],
     template: 'portrait',
-    title: 'Movida Kids'
+    content: [
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/1.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/2.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/3.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/4.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/5.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/6.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/7.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/8.jpg'),
+        height: 667,
+        width: 375
+      },
+      {
+        type: 'portrait',
+        source: require('../assets/case/movida-kids/9.jpg'),
+        height: 667,
+        width: 375
+      }
+    ]
   },
   {
-    category: 'Websites',
-    client: 'DDB and Lufthansa',
     color: '#26648e',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/5.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/6.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/7.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world-2/8.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'July, 2018',
-    image: require(`../assets/work/say-yes-to-the-world-2.jpg`),
-    role: 'WebGL Developer',
+    image: require('../assets/work/say-yes-to-the-world-2.jpg'),
     slug: 'say-yes-to-the-world-2',
-    technologies: 'GLSL · GSAP · React · Three.js',
-    title: 'Say Yes To The World 2'
+    title: 'Say Yes To The World 2',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'July 2018'
+      },
+      {
+        label: 'Technologies',
+        text: 'GLSL · GSAP · React · Three.js'
+      },
+      {
+        label: 'Company',
+        text: 'UNIT9'
+      },
+      {
+        label: 'Client',
+        text: 'DDB'
+      },
+      {
+        label: 'Brand',
+        text: 'Lufthansa'
+      }
+    ],
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/5.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/6.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/7.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world-2/8.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
   },
   {
-    category: 'Websites',
-    client: 'TIAA and Weber Shandwick',
     color: '#9bd8f7',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/5.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/6.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/7.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/8.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/9.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/10.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/11.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/12.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/13.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/14.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/15.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/the-difference-maker/16.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'April, 2018',
-    image: require(`../assets/work/the-difference-maker.jpg`),
-    role: 'Front End Developer',
+    image: require('../assets/work/the-difference-maker.jpg'),
     slug: 'the-difference-maker',
-    technologies: 'GSAP · Lottie · React',
     title: 'The Difference Maker',
-    url: 'https://quiz.tiaa.org/'
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'April 2018'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP · Lottie · React'
+      },
+      {
+        label: 'Company',
+        text: 'UNIT9'
+      },
+      {
+        label: 'Client',
+        text: 'Weber Shandwick'
+      },
+      {
+        label: 'Brand',
+        text: 'TIAA'
+      },
+      {
+        label: 'FWA',
+        text: 'FWA of The Day'
+      }
+    ],
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/5.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/6.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/7.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/8.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/9.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/10.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/11.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/12.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/13.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/14.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/15.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/the-difference-maker/16.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
   },
   {
-    category: 'Websites',
-    client: 'DDB and Lufthansa',
     color: '#ffb300',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world/5.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world/6.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/say-yes-to-the-world/7.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'January, 2018',
-    image: require(`../assets/work/say-yes-to-the-world.jpg`),
-    role: 'WebGL Developer',
+    image: require('../assets/work/say-yes-to-the-world.jpg'),
     slug: 'say-yes-to-the-world',
-    technologies: 'GLSL · GSAP · React · Three.js',
-    title: 'Say Yes To The World'
-  },
-  {
-    awards: [
+    title: 'Shell Make The Future',
+    information: [
       {
-        title: 'FWA',
-        description: 'FWA of The Day'
+        label: 'Category',
+        text: 'Website'
       },
       {
-        title: 'Lovie Awards',
-        description: 'Best Visual Design (Silver)'
+        label: 'Date',
+        text: 'January 2018'
+      },
+      {
+        label: 'Technologies',
+        text: 'GLSL · GSAP · React · Three.js'
+      },
+      {
+        label: 'Company',
+        text: 'UNIT9'
+      },
+      {
+        label: 'Client',
+        text: 'DDB'
+      },
+      {
+        label: 'Brand',
+        text: 'Lufthansa'
       }
     ],
-    category: 'Websites',
-    client: 'Oath Ryot Studios and Shell',
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world/5.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world/6.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/say-yes-to-the-world/7.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
+  },
+  {
     color: '#5741d2',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/shell-make-the-future/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/shell-make-the-future/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/shell-make-the-future/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/shell-make-the-future/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/shell-make-the-future/5.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'December, 2017',
-    image: require(`../assets/work/shell-make-the-future.jpg`),
-    role: 'Front End Developer',
+    image: require('../assets/work/shell-make-the-future.jpg'),
     slug: 'shell-make-the-future',
-    technologies: 'GSAP · React',
-    title: 'Shell Make The Future'
+    title: 'Shell Make The Future',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'December 2017'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP · React'
+      },
+      {
+        label: 'Company',
+        text: 'UNIT9'
+      },
+      {
+        label: 'Client',
+        text: 'Oath Ryot Studios'
+      },
+      {
+        label: 'Brand',
+        text: 'Shell'
+      },
+      {
+        label: 'FWA',
+        text: 'FWA of The Day'
+      },
+      {
+        label: 'Lovie Awards',
+        text: 'Best Visual Design (Silver)'
+      }
+    ],
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/shell-make-the-future/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/shell-make-the-future/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/shell-make-the-future/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/shell-make-the-future/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/shell-make-the-future/5.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
   },
   {
-    category: 'Websites',
-    client: 'Commonwealth//McCann and Corvette',
     color: '#ff351a',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/corvette-sound-visualizer/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/corvette-sound-visualizer/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/corvette-sound-visualizer/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/corvette-sound-visualizer/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/corvette-sound-visualizer/5.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'September, 2017',
-    image: require(`../assets/work/corvette-sound-visualizer.jpg`),
-    role: 'WebGL Developer',
+    image: require('../assets/work/corvette-sound-visualizer.jpg'),
     slug: 'corvette-sound-visualizer',
-    technologies: 'GLSL · GSAP · Three.js',
-    title: 'Corvette Sound Visualizer'
-  },
-  {
-    awards: [
+    title: 'Corvette Sound Visualizer',
+    information: [
       {
-        title: 'FWA',
-        description: 'FWA of The Day'
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'September 2017'
+      },
+      {
+        label: 'Technologies',
+        text: 'GLSL · GSAP · Three.js'
+      },
+      {
+        label: 'Company',
+        text: 'UNIT9'
+      },
+      {
+        label: 'Client',
+        text: 'Commonwealth//McCann'
+      },
+      {
+        label: 'Brand',
+        text: 'Corvette'
       }
     ],
-    category: 'Games',
-    client: 'JD Sports and Nike',
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/corvette-sound-visualizer/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/corvette-sound-visualizer/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/corvette-sound-visualizer/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/corvette-sound-visualizer/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/corvette-sound-visualizer/5.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
+  },
+  {
     color: '#00e2a5',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/1.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/2.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/3.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/4.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/5.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/6.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/7.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/8.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/9.jpg`),
-        height: 414,
-        width: 736
-      },
-      {
-        type: 'landscape',
-        source: require(`../assets/case/nike-city-fast/10.jpg`),
-        height: 414,
-        width: 736
-      }
-    ],
-    date: 'July, 2017',
-    image: require(`../assets/work/nike-city-fast.jpg`),
-    role: 'Game Developer',
+    image: require('../assets/work/nike-city-fast.jpg'),
     slug: 'nike-city-fast',
-    technologies: 'Phaser',
-    template: 'landscape',
     title: 'Nike City Fast',
-    url: 'http://nikecityfast.co.uk/'
+    information: [
+      {
+        label: 'Category',
+        text: 'Game'
+      },
+      {
+        label: 'Date',
+        text: 'July 2017'
+      },
+      {
+        label: 'Technologies',
+        text: 'Phaser'
+      },
+      {
+        label: 'Company',
+        text: 'UNIT9'
+      },
+      {
+        label: 'Client',
+        text: 'JD Sports'
+      },
+      {
+        label: 'Brand',
+        text: 'Nike'
+      },
+      {
+        label: 'FWA',
+        text: 'FWA of The Day'
+      }
+    ],
+    url: 'http://nikecityfast.co.uk/',
+    template: 'landscape',
+    content: [
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/1.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/2.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/3.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/4.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/5.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/6.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/7.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/8.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/9.jpg'),
+        height: 414,
+        width: 736
+      },
+      {
+        type: 'landscape',
+        source: require('../assets/case/nike-city-fast/10.jpg'),
+        height: 414,
+        width: 736
+      }
+    ]
   },
   {
-    category: 'Websites',
-    client: 'Airbnb and TBWA',
     color: '#fd5c63',
-    company: 'UNIT9',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/airbnb-family-trips/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/airbnb-family-trips/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/airbnb-family-trips/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/airbnb-family-trips/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/airbnb-family-trips/5.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/airbnb-family-trips/6.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/airbnb-family-trips/7.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'February, 2017',
-    image: require(`../assets/work/airbnb-family-trips.jpg`),
-    role: 'Front End Developer',
+    image: require('../assets/work/airbnb-family-trips.jpg'),
     slug: 'airbnb-family-trips',
-    technologies: 'Angular 2 · GSAP · Lottie',
-    title: 'Airbnb Family Trips'
+    title: 'Airbnb Family Trips',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'February 2017'
+      },
+      {
+        label: 'Technologies',
+        text: 'Angular 2 · GSAP · Lottie'
+      },
+      {
+        label: 'Company',
+        text: 'UNIT9'
+      },
+      {
+        label: 'Client',
+        text: 'TBWA'
+      },
+      {
+        label: 'Brand',
+        text: 'Airbnb'
+      }
+    ],
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/airbnb-family-trips/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/airbnb-family-trips/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/airbnb-family-trips/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/airbnb-family-trips/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/airbnb-family-trips/5.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/airbnb-family-trips/6.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/airbnb-family-trips/7.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
   },
   {
-    category: 'Websites',
-    client: 'Believe Earth',
     color: '#12b691',
-    company: 'Royalpixel',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/believe-earth/1.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/believe-earth/2.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/believe-earth/3.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/believe-earth/4.jpg`),
-        height: 1080,
-        width: 1920
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/believe-earth/5.jpg`),
-        height: 1080,
-        width: 1920
-      }
-    ],
-    date: 'August, 2017',
-    image: require(`../assets/work/believe-earth.jpg`),
-    role: 'Tech Lead',
+    image: require('../assets/work/believe-earth.jpg'),
     slug: 'believe-earth',
-    technologies: 'GLSL · Three.js',
     title: 'Believe Earth',
-    url: 'http://believe.earth/earth/'
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'August 2017'
+      },
+      {
+        label: 'Technologies',
+        text: 'GLSL · Three.js'
+      },
+      {
+        label: 'Company',
+        text: 'Royalpixel'
+      },
+      {
+        label: 'Brand',
+        text: 'Believe Earth'
+      }
+    ],
+    url: 'http://believe.earth/earth/',
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/believe-earth/1.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/believe-earth/2.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/believe-earth/3.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/believe-earth/4.jpg'),
+        height: 1080,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/believe-earth/5.jpg'),
+        height: 1080,
+        width: 1920
+      }
+    ]
   },
   {
-    category: 'Games',
-    client: 'Discovery Kids',
     color: '#46c1be',
-    company: 'Royalpixel',
-    content: [
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/1.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/2.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/3.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/4.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/5.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/6.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/7.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/8.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/9.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/10.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/11.jpg`),
-        height: 650,
-        width: 1156
-      },
-      {
-        type: 'screenshot',
-        source: require(`../assets/case/doki-vacations/12.jpg`),
-        height: 650,
-        width: 1156
-      }
-    ],
-    date: 'June, 2014',
-    image: require(`../assets/work/doki-vacations.jpg`),
-    role: 'Tech Lead',
+    image: require('../assets/work/doki-vacations.jpg'),
     slug: 'doki-vacations',
-    technologies: 'Phaser',
-    title: 'Doki Vacations'
-  },
-  {
-    category: 'Websites',
-    client: 'FIAP and Google',
-    color: '#00ffff',
-    company: 'FIAP',
-    content: [
+    title: 'Doki Vacations',
+    url: 'https://lhbzr.com/doki/game-es/',
+    information: [
       {
-        type: 'screenshot',
-        source: require(`../assets/case/app-marathon/1.jpg`),
-        height: 5781,
-        width: 1920
+        label: 'Category',
+        text: 'Game'
       },
       {
-        type: 'screenshot',
-        source: require(`../assets/case/app-marathon/2.jpg`),
-        height: 1190,
-        width: 1920
+        label: 'Date',
+        text: 'June 2014'
       },
       {
-        type: 'screenshot',
-        source: require(`../assets/case/app-marathon/3.jpg`),
-        height: 1202,
-        width: 1920
+        label: 'Technologies',
+        text: 'Phaser'
       },
       {
-        type: 'screenshot',
-        source: require(`../assets/case/app-marathon/4.jpg`),
-        height: 1148,
-        width: 1920
+        label: 'Company',
+        text: 'Royalpixel'
+      },
+      {
+        label: 'Brand',
+        text: 'Discovery Kids'
       }
     ],
-    date: 'September, 2015',
-    image: require(`../assets/work/app-marathon.jpg`),
-    role: 'Front End Developer',
-    slug: 'app-marathon',
-    technologies: 'GSAP',
-    title: 'App Marathon'
-  },
-  {
-    category: 'Websites',
-    client: 'FIAP',
-    company: 'FIAP',
-    color: '#ffe527',
     content: [
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap-next/1.jpg`),
+        source: require('../assets/case/doki-vacations/1.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/2.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/3.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/4.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/5.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/6.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/7.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/8.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/9.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/10.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/11.jpg'),
+        height: 650,
+        width: 1156
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/doki-vacations/12.jpg'),
+        height: 650,
+        width: 1156
+      }
+    ]
+  },
+  {
+    color: '#ffe527',
+    image: require('../assets/work/fiap-next.jpg'),
+    slug: 'fiap-next',
+    title: 'FIAP NEXT',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'October 2016'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP · Timber · WordPress'
+      },
+      {
+        label: 'Company',
+        text: 'FIAP'
+      }
+    ],
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/fiap-next/1.jpg'),
         height: 5358,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap-next/2.jpg`),
+        source: require('../assets/case/fiap-next/2.jpg'),
         height: 2098,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap-next/3.jpg`),
+        source: require('../assets/case/fiap-next/3.jpg'),
         height: 3432,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap-next/4.jpg`),
+        source: require('../assets/case/fiap-next/4.jpg'),
         height: 1897,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap-next/5.jpg`),
+        source: require('../assets/case/fiap-next/5.jpg'),
         height: 3449,
         width: 1920
       }
-    ],
-    date: 'October, 2015',
-    image: require(`../assets/work/fiap-next.jpg`),
-    role: 'Tech Lead',
-    slug: 'fiap-next',
-    technologies: 'GSAP · Timber · WordPress',
-    title: 'FIAP NEXT'
+    ]
   },
   {
-    category: 'Websites',
-    client: 'FIAP',
     color: '#ed145b',
-    company: 'FIAP',
+    image: require('../assets/work/fiap.jpg'),
+    slug: 'fiap',
+    title: 'FIAP',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'January 2016'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP · Timber · WordPress'
+      },
+      {
+        label: 'Company',
+        text: 'FIAP'
+      }
+    ],
     content: [
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap/1.jpg`),
+        source: require('../assets/case/fiap/1.jpg'),
         height: 3235,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap/2.jpg`),
+        source: require('../assets/case/fiap/2.jpg'),
         height: 14056,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap/3.jpg`),
+        source: require('../assets/case/fiap/3.jpg'),
         height: 4886,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap/4.jpg`),
+        source: require('../assets/case/fiap/4.jpg'),
         height: 2794,
         width: 1920
       },
       {
         type: 'screenshot',
-        source: require(`../assets/case/fiap/5.jpg`),
+        source: require('../assets/case/fiap/5.jpg'),
         height: 3147,
         width: 1920
       }
+    ]
+  },
+  {
+    color: '#00ffff',
+    image: require('../assets/work/app-marathon.jpg'),
+    slug: 'app-marathon',
+    title: 'App Marathon',
+    information: [
+      {
+        label: 'Category',
+        text: 'Website'
+      },
+      {
+        label: 'Date',
+        text: 'September 2015'
+      },
+      {
+        label: 'Technologies',
+        text: 'GSAP'
+      },
+      {
+        label: 'Company',
+        text: 'FIAP'
+      }
     ],
-    date: 'January, 2016',
-    image: require(`../assets/work/fiap.jpg`),
-    role: 'Tech Lead',
-    slug: 'fiap',
-    technologies: 'GSAP · Timber · WordPress',
-    title: 'FIAP'
+    content: [
+      {
+        type: 'screenshot',
+        source: require('../assets/case/app-marathon/1.jpg'),
+        height: 5781,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/app-marathon/2.jpg'),
+        height: 1190,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/app-marathon/3.jpg'),
+        height: 1202,
+        width: 1920
+      },
+      {
+        type: 'screenshot',
+        source: require('../assets/case/app-marathon/4.jpg'),
+        height: 1148,
+        width: 1920
+      }
+    ]
   }
 ]

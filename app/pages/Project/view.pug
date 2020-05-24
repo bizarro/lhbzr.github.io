@@ -16,37 +16,10 @@ each project, index in projects
 
     div(class=styles.description)
       div(class=styles.information)
-        div(class=`Item ${styles.information__item}`)
-          strong(class=styles.information__item__label) Category
-          span(class=styles.information__item__description)=project.category
-
-        div(class=`Item ${styles.information__item}`)
-          strong(class=styles.information__item__label) Date
-          span(class=styles.information__item__description)=project.date
-
-        div(class=`Item ${styles.information__item}`)
-          strong(class=styles.information__item__label) Role
-          span(class=styles.information__item__description)=project.role
-
-        div(class=`Item ${styles.information__item}`)
-          strong(class=styles.information__item__label) Company
-          span(class=styles.information__item__description)=project.company
-
-        div(class=`Item ${styles.information__item}`)
-          strong(class=styles.information__item__label) Client
-          span(class=styles.information__item__description)=project.client
-
-        div(class=`Item ${styles.information__item}`)
-          strong(class=styles.information__item__label) Technologies
-          span(class=styles.information__item__description)=project.technologies
-
-      if project.awards
-        div(class=styles.awards)
-          div(class=styles.awards__list)
-            each award, index in project.awards
-              div(class=`Item ${styles.awards__item}`)
-                span(class=styles.awards__item__title)=award.title
-                span(class=styles.awards__item__description)=award.description
+        each section, index in project.information
+          div(class=`Item ${styles.information__item}`)
+            strong(class=styles.information__item__label)=section.label
+            span(class=styles.information__item__description)=section.text
 
       if project.apps
         div(class=`Item ${styles.apps}`)

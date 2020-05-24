@@ -1,6 +1,9 @@
 export const URLS = [
   '/about',
   '/work',
+  '/project/studio-maertens',
+  '/project/erika-moreira',
+  '/project/bruno-arizio',
   '/project/dominic-berzins',
   '/project/cult',
   '/project/say-yes-to-the-world-2',

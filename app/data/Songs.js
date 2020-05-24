@@ -1,26 +1,18 @@
 export default [
   {
-    name: 'Drinkee - Sofi Tukker',
+    name: 'drinkee - sofi tukker',
     link: 'https://soundcloud.com/sofitukker/drinkee-original-mix'
   },
   {
-    name: 'DVNO - Justice',
+    name: 'still feel - half•alive',
+    link: 'https://soundcloud.com/halfaliveco/still-feel'
+  },
+  {
+    name: 'dvno - justice',
     link: 'https://soundcloud.com/downtownrecords/justice-dvno'
   },
   {
-    name: 'Never Ever - STRFKR',
+    name: 'never ever - strfkr',
     link: 'https://soundcloud.com/starfucker_usa/never-ever'
-  },
-  {
-    name: 'Pitch Black - Vicetone',
-    link: 'https://soundcloud.com/spinninrecords/vicetone-pitch-black-available-january-11'
-  },
-  {
-    name: 'Push The Tempo - Me & My Toothbrush',
-    link: 'https://soundcloud.com/enormoustunes/me-my-toothbrush-push-the-tempo'
-  },
-  {
-    name: 'Landslide - Vicetone & Youngblood Hawke',
-    link: 'https://soundcloud.com/spinninrecords/vicetone-youngblood-hawke-landslide'
   }
 ]
