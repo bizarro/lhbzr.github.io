@@ -38,7 +38,7 @@
     "semver-compare": "^1.0.0",
     "stats.js": "^0.17.0",
     "style-loader": "^0.21.0",
-    "three": "0.84",
+    "three": "0.125",
     "ua-parser-js": "^0.7.17",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
