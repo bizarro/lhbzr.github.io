@@ -39,7 +39,7 @@
     "stats.js": "^0.17.0",
     "style-loader": "^0.21.0",
     "three": "0.84",
-    "ua-parser-js": "^0.7.17",
+    "ua-parser-js": "^0.7.24",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
     "webfontloader": "^1.6.28",
