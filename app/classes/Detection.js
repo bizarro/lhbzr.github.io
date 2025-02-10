@@ -2,7 +2,7 @@ import semverCompare from 'semver-compare'
 import UAParser from 'ua-parser-js'
 
 class DetectionManager {
-  constructor () {
+  constructor() {
     this.parser = new UAParser()
     this.device = this.parser.getDevice()
 
@@ -23,39 +23,49 @@ class DetectionManager {
     }
 
     this.supported = {
-      desktop: [{
-        browser: 'chrome',
-        minversion: 55
-      }, {
-        browser: 'safari',
-        minversion: 9
-      }, {
-        browser: 'firefox',
-        minversion: 55
-      }],
-      tablet: [{
-        os: 'ios',
-        minos: '9',
-        browser: 'mobile safari'
-      }, {
-        os: 'android',
-        minos: '5.0',
-        browser: 'chrome'
-      }],
-      mobile: [{
-        os: 'ios',
-        minos: '9',
-        browser: 'mobile safari'
-      }, {
-        os: 'android',
-        minos: '5.0',
-        browser: 'chrome',
-        minversion: 58
-      }]
+      desktop: [
+        {
+          browser: 'chrome',
+          minversion: 55,
+        },
+        {
+          browser: 'safari',
+          minversion: 9,
+        },
+        {
+          browser: 'firefox',
+          minversion: 55,
+        },
+      ],
+      tablet: [
+        {
+          os: 'ios',
+          minos: '9',
+          browser: 'mobile safari',
+        },
+        {
+          os: 'android',
+          minos: '5.0',
+          browser: 'chrome',
+        },
+      ],
+      mobile: [
+        {
+          os: 'ios',
+          minos: '9',
+          browser: 'mobile safari',
+        },
+        {
+          os: 'android',
+          minos: '5.0',
+          browser: 'chrome',
+          minversion: 58,
+        },
+      ],
     }
   }
 
-  compareVersions (a, b) {
+  compareVersions(a, b) {
     if (typeof a === 'string' || a instanceof String) {
       return semverCompare(a, b) <= 0
     }
@@ -63,15 +73,15 @@ class DetectionManager {
     return a <= parseInt(b, 10)
   }
 
-  isSupported () {
+  isSupported() {
     let supported = false
 
     if (this.isAppBrowser()) {
       return false
     }
 
-    this.supported[this.type].every(device => {
-      supported = Object.keys(device).every(requirement => {
+    this.supported[this.type].every((device) => {
+      supported = Object.keys(device).every((requirement) => {
         let value = device[requirement]
 
         switch (requirement) {
@@ -105,31 +115,31 @@ class DetectionManager {
     return supported
   }
 
-  isAppBrowser () {
+  isAppBrowser() {
     const ua = navigator.userAgent || navigator.vendor || window.opera
 
-    if ((ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1) || (ua.indexOf('Twitter') > -1)) {
+    if (ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1 || ua.indexOf('Twitter') > -1) {
       return true
     }
 
     return false
   }
 
-  isSafari () {
+  isSafari() {
     const browser = this.parser.getBrowser().name.toLowerCase()
 
     return browser.indexOf('safari') > -1
   }
 
-  isMobile () {
+  isMobile() {
     return this.type === 'mobile' || this.type === 'tablet'
   }
 
-  isTablet () {
+  isTablet() {
     return this.type === 'tablet'
   }
 
-  check (successCallback, failCallback) {
+  check(successCallback, failCallback) {
     if (this.isSupported()) {
       successCallback()
     } else {

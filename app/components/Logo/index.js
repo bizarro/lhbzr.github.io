@@ -1,4 +1,4 @@
-import { Power2, TimelineMax, TweenMax } from 'gsap'
+import GSAP from 'gsap'
 
 import Element from '../../classes/Element'
 import SVGMorpheus from '../../plugins/SVGMorpheus'
@@ -11,11 +11,11 @@ const CENTER = 'center'
 const TOP = 'top'
 
 export default class extends Element {
-  constructor () {
+  constructor() {
     super({
       appear: true,
       element: 'button',
-      name: 'Logo'
+      name: 'Logo',
     })
 
     this.element.className = `Logo ${styles.logo}`
@@ -39,69 +39,70 @@ export default class extends Element {
     `
 
     this.elements = {
-      media: this.element.querySelector('.Media')
+      media: this.element.querySelector('.Media'),
     }
 
     this.enable()
     this.setup()
   }
 
-  setup () {
+  setup() {
     this.morpheus = new SVGMorpheus(this.elements.media)
 
-    this.hover = new TimelineMax({ paused: true })
-    this.hover.to(this.element, 1, {
-      ease: Power2.easeOut,
+    this.hover = GSAP.timeline({ paused: true })
+    this.hover.to(this.element, {
+      duration: 1,
+      ease: 'power2.out',
       rotation: '+= 180',
       x: '-50%',
-      y: '-50%'
+      y: '-50%',
     })
   }
 
-  disable () {
+  disable() {
     this.isEnabled = false
   }
 
-  enable () {
+  enable() {
     this.isEnabled = true
   }
 
-  show () {
-    TweenMax.set(this.element, {
-      autoAlpha: 1
+  show() {
+    GSAP.set(this.element, {
+      autoAlpha: 1,
     })
 
     return super.show()
   }
 
-  hide () {
-    TweenMax.set(this.element, {
-      autoAlpha: 0
+  hide() {
+    GSAP.set(this.element, {
+      autoAlpha: 0,
     })
 
     return super.hide()
   }
 
-  click () {
+  click() {
     if (!this.isEnabled) return
 
     if (this.route.indexOf('/project/') > -1) {
-      this.emit('change', '/work')
+      this.events.emit('change', '/work')
     } else {
-      this.emit('change', '/')
+      this.events.emit('change', '/')
     }
   }
 
-  hover () {
+  hover() {
     if (this.state === TOP) {
       this.morpheus.to('close', {
         duration: 1000,
-        rotation: 'random'
+        rotation: 'random',
       })
     }
   }
 
-  addEventListeners () {
+  addEventListeners() {
     this.element.addEventListener('click', this.click)
 
     if (!Detection.isMobile()) {
@@ -109,7 +110,7 @@ export default class extends Element {
     }
   }
 
-  removeEventListeners () {
+  removeEventListeners() {
     this.element.removeEventListener('click', this.click)
 
     if (!Detection.isMobile()) {
@@ -117,30 +118,32 @@ export default class extends Element {
     }
   }
 
-  onRoute (route) {
+  onRoute(route) {
     this.route = route
 
     if (route === '/') {
       this.morpheus.to('logo', {
         duration: 1000,
-        rotation: 'random'
+        rotation: 'random',
       })
 
-      TweenMax.to(this.element, 1, {
+      GSAP.to(this.element, {
+        duration: 1,
         left: '50%',
-        top: '50%'
+        top: '50%',
       })
 
       this.state = CENTER
     } else {
       this.morpheus.to('close', {
         duration: 1000,
-        rotation: 'random'
+        rotation: 'random',
       })
 
-      TweenMax.to(this.element, 1, {
+      GSAP.to(this.element, {
+        duration: 1,
         left: '50%',
-        top: 100
+        top: 50,
       })
 
       this.state = TOP

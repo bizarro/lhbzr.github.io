@@ -1,10 +1,8 @@
-import { Expo, TimelineMax } from 'gsap'
+import GSAP from 'gsap'
 import { each, filter, first } from 'lodash'
 
 import Page from 'classes/Page'
 import Projects from 'data/Work'
-
-import { split } from 'utils/text'
 
 import styles from './styles.scss'
 import view from './view.pug'
@@ -36,22 +34,9 @@ export default class extends Page {
 
   setup () {
     each(this.elements.wrapper, project => {
-      const buttonText = project.querySelector('.ButtonText')
-
       const elements = {
         id: project.id,
         title: project.querySelector('.Title'),
-        buttonTop: project.querySelector('.ButtonTop'),
-        buttonRight: project.querySelector('.ButtonRight'),
-        buttonBottom: project.querySelector('.ButtonBottom'),
-        buttonLeft: project.querySelector('.ButtonLeft'),
-        buttonText,
-        buttonTextSpans: buttonText && split({
-          element: buttonText,
-          append: false,
-          calculate: false
-        }),
-        buttonArrow: project.querySelector('.ButtonArrow'),
         items: project.querySelectorAll('.Item'),
         medias: project.querySelectorAll('.Media'),
         images: project.querySelectorAll('.Image')
@@ -79,8 +64,8 @@ export default class extends Page {
 
       document.body.removeChild(this.element)
 
-      const ease = Expo.easeOut
-      const timeline = new TimelineMax({
+      const ease = 'expo.out'
+      const timeline = GSAP.timeline({
         onStart: () => {
           each(this.selected.images, image => {
             if (!image.src) {
@@ -94,75 +79,33 @@ export default class extends Page {
         autoAlpha: 1
       })
 
-      timeline.fromTo(this.selected.title, 1.5, {
+      timeline.fromTo(this.selected.title, {
         autoAlpha: 0,
         y: 50
       }, {
         autoAlpha: 1,
+        duration: 1.5,
         ease,
         y: 0
       }, 0, 0)
 
-      timeline.staggerFromTo(this.selected.items, 1.5, {
+      timeline.fromTo(this.selected.items, {
         autoAlpha: 0,
         y: 50
       }, {
         autoAlpha: 1,
+        delay: 0.05,
+        duration: 1.5,
         ease,
+        stagger: 0.1,
         y: 0
-      }, 0.1, 0, 0)
+      }, 0, 0)
 
-      if (this.selected.buttonArrow) {
-        timeline.staggerFromTo(this.selected.buttonTextSpans, 1.5, {
-          autoAlpha: 0,
-          x: -15
-        }, {
-          autoAlpha: 1,
-          ease,
-          x: 0
-        }, 0.1, 0, 0)
-
-        timeline.fromTo(this.selected.buttonArrow, 1.5, {
-          autoAlpha: 0,
-          x: -15
-        }, {
-          autoAlpha: 1,
-          ease,
-          x: 0
-        }, 0, 0)
-
-        timeline.fromTo(this.selected.buttonTop, 0.375, {
-          x: '-100%'
-        }, {
-          x: '0%'
-        }, 0, 0)
-
-        timeline.fromTo(this.selected.buttonRight, 0.375, {
-          y: '-100%'
-        }, {
-          delay: 0.375,
-          y: '0%'
-        }, 0, 0)
-
-        timeline.fromTo(this.selected.buttonBottom, 0.375, {
-          x: '100%'
-        }, {
-          delay: 0.375 * 2,
-          x: '0%'
-        }, 0, 0)
-
-        timeline.fromTo(this.selected.buttonLeft, 0.375, {
-          y: '100%'
-        }, {
-          delay: 0.375 * 3,
-          y: '0%'
-        }, 0, 0)
-      }
-
-      timeline.fromTo(this.selected.medias, 1.5, {
+      timeline.fromTo(this.selected.medias, {
         autoAlpha: 0
       }, {
-        autoAlpha: 1
+        autoAlpha: 1,
+        duration: 1.5
       }, 0, 0)
 
       return super.show(timeline)
@@ -172,8 +115,8 @@ export default class extends Page {
   hide () {
     if (this.element.parentNode !== document.body) return
 
-    const ease = Expo.easeOut
-    const timeline = new TimelineMax({
+    const ease = 'expo.out'
+    const timeline = GSAP.timeline({
       onComplete: () => {
         each(this.elements.wrapper, project => {
           project.classList.remove(styles['wrapper--active'])
@@ -181,55 +124,26 @@ export default class extends Page {
       }
     })
 
-    timeline.to(this.selected.medias, 1.5, {
-      autoAlpha: 0
+    timeline.to(this.selected.medias, {
+      autoAlpha: 0,
+      duration: 1.5,
     }, 0)
 
-    timeline.to(this.selected.title, 1.5, {
+    timeline.to(this.selected.title, {
       autoAlpha: 0,
-      delay: 0.2,
+      duration: 1.5,
       ease,
       y: -50
     }, 0, 0)
 
-    timeline.staggerTo(this.selected.items, 0.375, {
+    timeline.to(this.selected.items, {
       autoAlpha: 0,
+      delay: 0.05,
+      duration: 1.5,
       ease,
+      stagger: 0.1,
       y: -50
-    }, 0.1, 0, 0)
-
-    if (this.selected.buttonArrow) {
-      timeline.staggerTo(this.selected.buttonTextSpans, 1.5, {
-        autoAlpha: 0,
-        ease,
-        x: -15
-      }, 0.1, 0, 0)
-
-      timeline.to(this.selected.buttonArrow, 1.5, {
-        autoAlpha: 0,
-        ease,
-        x: -15
-      }, 0, 0)
-
-      timeline.to(this.selected.buttonLeft, 0.375, {
-        y: '100%'
-      }, 0, 0)
-
-      timeline.to(this.selected.buttonBottom, 0.375, {
-        delay: 0.375,
-        x: '100%'
-      }, 0, 0)
-
-      timeline.to(this.selected.buttonRight, 0.375, {
-        delay: 0.375 * 2,
-        y: '-100%'
-      }, 0, 0)
-
-      timeline.to(this.selected.buttonTop, 0.375, {
-        delay: 0.375 * 3,
-        x: '-100%'
-      }, 0, 0)
-    }
+    }, 0, 0)
 
     timeline.set(this.element, {
       autoAlpha: 0

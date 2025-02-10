@@ -1,4 +1,4 @@
-import { TimelineMax, TweenMax } from 'gsap'
+import GSAP from 'gsap'
 import { each } from 'lodash'
 
 import Element from '../../classes/Element'
@@ -11,11 +11,11 @@ import { randomInteger } from '../../utils/math'
 import { split } from '../../utils/text'
 
 export default class extends Element {
-  constructor () {
+  constructor() {
     super({
       appear: true,
       element: 'nav',
-      name: 'Menu'
+      name: 'Menu',
     })
 
     this.element.className = `Menu ${styles.menu}`
@@ -43,7 +43,7 @@ export default class extends Element {
       buttons: this.element.querySelectorAll('.Button'),
       texts: this.element.querySelectorAll('.Text'),
       textsSpans: [],
-      lines: this.element.querySelectorAll('.Line')
+      lines: this.element.querySelectorAll('.Line'),
     }
 
     this.characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()-+=[]{}|;:,./<>?'.split('')
@@ -52,17 +52,17 @@ export default class extends Element {
     this.setup()
   }
 
-  setup () {
-    each(this.elements.texts, text => {
+  setup() {
+    each(this.elements.texts, (text) => {
       const spans = split({
         element: text,
         expression: '',
         append: false,
-        calculate: false
+        calculate: false,
       })
 
       each(spans, (span, index) => {
-        TweenMax.set(span, { y: index % 2 === 0 ? '100%' : '-100%' })
+        GSAP.set(span, { y: index % 2 === 0 ? '100%' : '-100%' })
 
         span.setAttribute('data-original', span.innerHTML)
       })
@@ -70,55 +70,79 @@ export default class extends Element {
       this.elements.textsSpans.push(spans)
     })
 
-    each(this.elements.lines, line => {
+    each(this.elements.lines, (line) => {
       line.style.strokeDasharray = `${line.getTotalLength()}px`
       line.style.strokeDashoffset = `${line.getTotalLength()}px`
     })
   }
 
-  disable () {
+  disable() {
     this.isEnabled = false
   }
 
-  enable () {
+  enable() {
     this.isEnabled = true
   }
 
-  show () {
-    const timeline = new TimelineMax()
+  show() {
+    const timeline = GSAP.timeline()
 
-    each(this.elements.textsSpans, spans => {
-      timeline.staggerTo(spans, 0.5, {
-        y: '0%'
-      }, 0.1, 'start')
+    each(this.elements.textsSpans, (spans) => {
+      timeline.to(
+        spans,
+        {
+          duration: 0.5,
+          stagger: 0.1,
+          y: '0%',
+        },
+        'start',
+      )
     })
 
-    timeline.staggerTo(this.elements.lines, 0.5, {
-      strokeDashoffset: 0
-    }, 0.1, 'start')
+    timeline.to(
+      this.elements.lines,
+      {
+        duration: 0.5,
+        stagger: 0.1,
+        strokeDashoffset: 0,
+      },
+      'start',
+    )
 
     return super.show(timeline)
   }
 
-  hide () {
-    const timeline = new TimelineMax()
+  hide() {
+    const timeline = GSAP.timeline()
 
-    each(this.elements.textsSpans, spans => {
-      timeline.staggerTo(spans, 0.5, {
-        cycle: {
-          y: ['100%', '-100%']
-        }
-      }, 0.1, 'start')
+    each(this.elements.textsSpans, (spans) => {
+      each(spans, (span, index) => {
+        timeline.to(
+          span,
+          {
+            delay: 0.1 * index,
+            duration: 0.5,
+            y: index % 2 === 0 ? '100%' : '-100%',
+          },
+          'start',
+        )
+      })
     })
 
-    timeline.staggerTo(this.elements.lines, 0.5, {
-      strokeDashoffset: 134.8
-    }, 0.1, 'start')
+    timeline.to(
+      this.elements.lines,
+      {
+        duration: 0.5,
+        stagger: 0.1,
+        strokeDashoffset: 134.8,
+      },
+      'start',
+    )
 
     return super.hide(timeline)
   }
 
-  randomize (event) {
+  randomize(event) {
     const index = event.target.getAttribute('data-index')
 
     this.interval = setInterval(() => {
@@ -128,7 +152,7 @@ export default class extends Element {
     }, 50)
   }
 
-  unrandomize (event) {
+  unrandomize(event) {
     const index = event.target.getAttribute('data-index')
 
     clearInterval(this.interval)
@@ -138,15 +162,15 @@ export default class extends Element {
     })
   }
 
-  click (event) {
+  click(event) {
     event.preventDefault()
 
     if (!this.isEnabled) return
 
-    this.emit('change', event.target.getAttribute('href'))
+    this.events.emit('change', event.target.getAttribute('href'))
   }
 
-  addEventListeners () {
+  addEventListeners() {
     each(this.elements.buttons, (button, index) => {
       if (!Detection.isMobile()) {
         button.addEventListener('mouseover', this.randomize)
@@ -157,7 +181,7 @@ export default class extends Element {
     })
   }
 
-  removeEventListeners () {
+  removeEventListeners() {
     each(this.elements.buttons, (button, index) => {
       if (!Detection.isMobile()) {
         button.removeEventListener('mouseover', this.randomize)
@@ -168,7 +192,7 @@ export default class extends Element {
     })
   }
 
-  onRoute (route) {
+  onRoute(route) {
     if (route === '/') {
       this.show()
     } else {

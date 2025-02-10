@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { createNanoEvents } from 'nanoevents'
 
 import {
   AdditiveBlending,
@@ -32,8 +32,6 @@ export default class Media extends Group {
 
     this.isActive = false
 
-    this.events = new EventEmitter()
-
     this.color = new Color(color)
     this.index = index
     this.slug = slug
@@ -61,6 +59,12 @@ export default class Media extends Group {
     this.hoverCreate()
     this.mediaCreate()
     this.overlayCreate()
+
+    this.events = createNanoEvents()
+  }
+
+  on (event, callback) {
+    return this.events.on(event, callback)
   }
 
   hoverCreate () {

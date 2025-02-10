@@ -21,10 +21,10 @@ if (CanvasRenderingContext2D && !CanvasRenderingContext2D.renderText) {
       let totalWidth = 0
 
       for (var i = 0; i < characters.length; i++) {
-        totalWidth += (this.measureText(characters[i]).width + letterSpacing)
+        totalWidth += this.measureText(characters[i]).width + letterSpacing
       }
 
-      currentPosition = x - (totalWidth / 2)
+      currentPosition = x - totalWidth / 2
     }
 
     while (index < text.length) {
@@ -32,28 +32,28 @@ if (CanvasRenderingContext2D && !CanvasRenderingContext2D.renderText) {
 
       this.fillText(current, currentPosition, y)
 
-      currentPosition += (align * (this.measureText(current).width + letterSpacing))
+      currentPosition += align * (this.measureText(current).width + letterSpacing)
     }
   }
 }
 
-function rowBlank (imageData, width, y) {
+function rowBlank(imageData, width, y) {
   for (let x = 0; x < width; x += 1) {
-    if (imageData.data[(y * (width * 4)) + ((x * 4) + 3)] !== 0) return false
+    if (imageData.data[y * (width * 4) + (x * 4 + 3)] !== 0) return false
   }
 
   return true
 }
 
-function columnBlank (imageData, width, x, top, bottom) {
+function columnBlank(imageData, width, x, top, bottom) {
   for (let y = top; y < bottom; y += 1) {
-    if (imageData.data[(y * (width * 4)) + ((x * 4) + 3)] !== 0) return false
+    if (imageData.data[y * (width * 4) + (x * 4 + 3)] !== 0) return false
   }
 
   return true
 }
 
-export function trim (canvas) {
+export function trim(canvas) {
   const context = canvas.getContext('2d')
   const height = canvas.height
   const width = canvas.width

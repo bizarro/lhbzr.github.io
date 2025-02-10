@@ -5,14 +5,7 @@ import './styles/base.scss'
 import './classes/Rotation'
 import './classes/Unsupported'
 
-import {
-  Color,
-  DirectionalLight,
-  Math as THREEMath,
-  PerspectiveCamera,
-  Scene,
-  WebGLRenderer
-} from 'three'
+import { Color, DirectionalLight, Math as THREEMath, PerspectiveCamera, Scene, WebGLRenderer } from 'three'
 
 import { compact, each, map } from 'lodash'
 
@@ -35,7 +28,7 @@ import Player from './components/Player'
 import Preloader from './components/Preloader'
 
 class App {
-  constructor () {
+  constructor() {
     AutoBind(this)
 
     this.elements = []
@@ -76,23 +69,23 @@ class App {
     this.addEventListeners()
   }
 
-  setup () {
-    each(this.pages, page => {
+  setup() {
+    each(this.pages, (page) => {
       if (page.on) page.on('change', this.onChange)
     })
 
-    each(this.elements, element => {
+    each(this.elements, (element) => {
       if (element.on) element.on('change', this.onChange)
     })
   }
 
-  createCursor () {
+  createCursor() {
     if (!Detection.isMobile() && !Detection.isTablet()) {
       this.cursor = new Cursor()
     }
   }
 
-  createPreloader () {
+  createPreloader() {
     window.requestAnimationFrame(() => {
       window.requestAnimationFrame(() => {
         this.preloader = new Preloader()
@@ -101,7 +94,7 @@ class App {
     })
   }
 
-  createRenderer () {
+  createRenderer() {
     this.renderer = new WebGLRenderer()
 
     this.renderer.setSize(this.width, this.height)
@@ -110,7 +103,7 @@ class App {
     document.body.appendChild(this.renderer.domElement)
   }
 
-  createScene () {
+  createScene() {
     this.scene = new Scene()
 
     this.camera = new PerspectiveCamera(45, this.width / this.height, 1, 10000)
@@ -129,7 +122,7 @@ class App {
     this.size = width
   }
 
-  createLights () {
+  createLights() {
     this.lightColor = new Color('#fff')
 
     this.lightOne = new DirectionalLight(this.lightColor, 1)
@@ -142,7 +135,7 @@ class App {
     this.scene.add(this.lightTwo)
   }
 
-  createVisualization () {
+  createVisualization() {
     this.visualization = new Visualization()
 
     this.scene.add(this.visualization.wrapper)
@@ -150,17 +143,17 @@ class App {
     this.pages.push(this.visualization)
   }
 
-  createAbout () {
+  createAbout() {
     this.about = new About()
 
     this.pages.push(this.about)
   }
 
-  createWork () {
+  createWork() {
     this.work = new Work({
       camera: this.camera,
       renderer: this.renderer,
-      size: Math.min(this.size * 0.8, 300)
+      size: Math.min(this.size * 0.8, 300),
     })
 
     this.scene.add(this.work.wrapper)
@@ -168,15 +161,15 @@ class App {
     this.pages.push(this.work)
   }
 
-  createProject () {
+  createProject() {
     this.project = new Project()
 
     this.pages.push(this.project)
   }
 
-  createBackground () {
+  createBackground() {
     this.background = new Background({
-      size: this.size
+      size: this.size,
     })
 
     this.scene.add(this.background)
@@ -184,34 +177,34 @@ class App {
     this.elements.push(this.background)
   }
 
-  createLogo () {
+  createLogo() {
     this.logo = new Logo()
 
     this.elements.push(this.logo)
   }
 
-  createMenu () {
+  createMenu() {
     this.menu = new Menu()
 
     this.elements.push(this.menu)
   }
 
-  createPlayer () {
+  createPlayer() {
     this.player = new Player()
 
     this.elements.push(this.player)
   }
 
-  createStats () {
+  createStats() {
     this.stats = new Stats()
 
     document.body.appendChild(this.stats.domElement)
   }
 
-  onPreloaded () {
+  onPreloaded() {
     const url = window.location.pathname.replace(/\/$/, '') || '/'
 
-    each(this.elements, element => {
+    each(this.elements, (element) => {
       if ((element.appear && url === '/') || element.name === 'Logo') element.show()
     })
 
@@ -220,7 +213,7 @@ class App {
     this.onChange(url)
   }
 
-  onChange (url, push = true) {
+  onChange(url, push = true) {
     if (this.isAnimating || this.url === url) return
 
     if (URLS.indexOf(url) === -1) {
@@ -232,7 +225,7 @@ class App {
     this.logo.disable()
     this.menu.disable()
 
-    let promises = map(this.pages, page => {
+    let promises = map(this.pages, (page) => {
       if ((page.url !== '/' && this.url.indexOf(page.url) !== -1) || page.url === this.url) {
         return page.hide()
       }
@@ -240,7 +233,7 @@ class App {
 
     promises = compact(promises)
 
-    each(this.elements, element => {
+    each(this.elements, (element) => {
       element.onRoute(url)
     })
 
@@ -252,14 +245,14 @@ class App {
       this.logo.enable()
       this.menu.enable()
 
-      each(this.pages, page => {
+      each(this.pages, (page) => {
         if ((page.url !== '/' && url.indexOf(page.url) !== -1) || page.url === url) {
           page.show()
         }
       })
 
       if (push) {
-        window.history.pushState({ page: this.url }, 'Luis Henrique Bizarro — Creative Front End Developer', this.url)
+        window.history.pushState({ page: this.url }, 'Bizarro — Creative Technologist', this.url)
       }
 
       if (this.cursor) {
@@ -268,7 +261,7 @@ class App {
     })
   }
 
-  onResize () {
+  onResize() {
     this.height = window.innerHeight
     this.width = window.innerWidth
 
@@ -279,11 +272,11 @@ class App {
     this.renderer.setSize(this.width, this.height)
   }
 
-  onPopState (event) {
+  onPopState(event) {
     this.onChange(window.location.pathname, false)
   }
 
-  render () {
+  render() {
     if (this.stats) {
       this.stats.begin()
     }
@@ -301,12 +294,12 @@ class App {
     this.frame = window.requestAnimationFrame(this.render)
   }
 
-  addEventListeners () {
+  addEventListeners() {
     window.addEventListener('popstate', this.onPopState)
     window.addEventListener('resize', this.onResize)
   }
 
-  removeEventListeners () {
+  removeEventListeners() {
     window.removeEventListener('popstate', this.onPopState)
     window.removeEventListener('resize', this.onResize)
   }

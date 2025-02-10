@@ -6,9 +6,7 @@ import {
   TetrahedronGeometry
 } from 'three'
 
-import {
-  TweenMax
-} from 'gsap'
+import GSAP from 'gsap'
 
 export default class Triangle extends Object3D {
   constructor ({ index }) {
@@ -38,8 +36,9 @@ export default class Triangle extends Object3D {
     return await new Promise(resolve => {
       const delay = Math.random()
 
-      TweenMax.to(this.triangle.position, 1, {
+      GSAP.to(this.triangle.position, {
         delay,
+        duration: 1,
         overwrite: true,
         z: 0,
         onComplete: () => {
@@ -47,8 +46,9 @@ export default class Triangle extends Object3D {
         }
       })
 
-      TweenMax.to(this.material, 1, {
+      GSAP.to(this.material, {
         delay,
+        duration: 1,
         opacity: 1,
         onStart: () => {
           this.triangle.visible = true
@@ -61,8 +61,9 @@ export default class Triangle extends Object3D {
     return await new Promise(resolve => {
       const delay = Math.random() * 0.5
 
-      TweenMax.to(this.triangle.position, 1, {
+      GSAP.to(this.triangle.position, {
         delay,
+        duration: 1,
         overwrite: true,
         z: -100,
         onComplete: () => {
@@ -70,8 +71,9 @@ export default class Triangle extends Object3D {
         }
       })
 
-      TweenMax.to(this.material, 1, {
+      GSAP.to(this.material, {
         delay,
+        duration: 1,
         overwrite: true,
         opacity: 0,
         onComplete: () => {
@@ -84,7 +86,7 @@ export default class Triangle extends Object3D {
   update ({ frequency }) {
     const value = Math.max(frequency / 100, 1)
 
-    TweenMax.set(this.triangle.scale, {
+    GSAP.set(this.triangle.scale, {
       z: value
     })
   }

@@ -3,10 +3,10 @@ import Element from './Element'
 import { Detection } from '../classes/Detection'
 
 class Rotation extends Element {
-  constructor () {
+  constructor() {
     super({
       element: 'section',
-      name: 'Unsupported'
+      name: 'Unsupported',
     })
 
     this.element.classList = `unsupported`
@@ -32,7 +32,7 @@ class Rotation extends Element {
     }
   }
 
-  onResize () {
+  onResize() {
     if (Detection.type === 'mobile') {
       if (window.innerWidth > window.innerHeight) {
         this.element.style.display = 'table'
@@ -50,13 +50,13 @@ class Rotation extends Element {
     }
   }
 
-  addEventListeners () {
+  addEventListeners() {
     if (Detection.isMobile()) {
       window.addEventListener('resize', this.onResize)
     }
   }
 
-  removeEventListeners () {
+  removeEventListeners() {
     if (Detection.isMobile()) {
       window.removeEventListener('resize', this.onResize)
     }

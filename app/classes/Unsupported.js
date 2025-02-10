@@ -3,10 +3,10 @@ import Element from './Element'
 import { Detection } from '../classes/Detection'
 
 class Unsupported extends Element {
-  constructor () {
+  constructor() {
     super({
       element: 'section',
-      name: 'Unsupported'
+      name: 'Unsupported',
     })
 
     this.element.classList = `unsupported`
@@ -32,17 +32,18 @@ class Unsupported extends Element {
     `
 
     this.elements = {
-      button: this.element.querySelector('Button')
+      button: this.element.querySelector('Button'),
     }
 
-    Detection.check(() => {
-
-    }, () => {
-      this.show()
-    })
+    Detection.check(
+      () => {},
+      () => {
+        this.show()
+      },
+    )
   }
 
-  show () {
+  show() {
     this.elements.button.addEventListener('click', () => {
       this.element.classList.add('unsupported--disabled')
     })
@@ -50,7 +51,7 @@ class Unsupported extends Element {
     return super.show()
   }
 
-  hide () {
+  hide() {
     return super.hide()
   }
 }

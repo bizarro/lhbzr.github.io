@@ -1,13 +1,11 @@
 import AutoBind from 'auto-bind'
-import EventEmitter from 'events'
+import { createNanoEvents } from 'nanoevents'
 
-import { TimelineMax, TweenMax } from 'gsap'
+import GSAP from 'gsap'
 import { clamp } from 'lodash'
 
-export default class extends EventEmitter {
-  constructor ({ url, name, element }) {
-    super()
-
+export default class {
+  constructor({ url, name, element }) {
     if (element) {
       this.element = document.createElement(element)
 
@@ -16,7 +14,7 @@ export default class extends EventEmitter {
       this.scroll = {
         position: 0,
         current: 0,
-        target: 0
+        target: 0,
       }
 
       this.onScrollMouseWheelEvent = this.onScrollMouseWheel.bind(this)
@@ -29,10 +27,16 @@ export default class extends EventEmitter {
     this.name = name
     this.url = url
 
+    this.events = createNanoEvents()
+
     AutoBind(this)
   }
 
-  async show (animation = new TimelineMax()) {
+  on(event, callback) {
+    return this.events.on(event, callback)
+  }
+
+  async show(animation = GSAP.timeline()) {
     this.addEventListeners()
 
     if (this.element) {
@@ -41,23 +45,23 @@ export default class extends EventEmitter {
       this.scroll = {
         position: 0,
         current: 0,
-        target: 0
+        target: 0,
       }
 
       this.onScrollUpdate()
     }
 
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       animation.call(() => resolve())
     })
 
     return Promise.resolve()
   }
 
-  async hide (animation = new TimelineMax()) {
+  async hide(animation = GSAP.timeline()) {
     if (this.element && this.element.parentNode !== document.body) return
 
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       animation.call(() => resolve())
     })
 
@@ -72,7 +76,7 @@ export default class extends EventEmitter {
     return Promise.resolve()
   }
 
-  onScrollMouseWheel (event) {
+  onScrollMouseWheel(event) {
     let delta = -event.wheelDeltaY || event.deltaY
     let speed = 75
 
@@ -84,14 +88,14 @@ export default class extends EventEmitter {
     this.scroll.target = clamp(this.scroll.target, 0, total)
   }
 
-  onScrollTouchStart (event) {
+  onScrollTouchStart(event) {
     this.isDown = true
 
     this.scroll.position = this.scroll.current
     this.start = event.touches ? event.touches[0].clientY : event.clientY
   }
 
-  onScrollTouchMove (event) {
+  onScrollTouchMove(event) {
     if (!this.isDown) return
 
     const total = this.element.clientHeight - window.innerHeight
@@ -103,21 +107,21 @@ export default class extends EventEmitter {
     this.scroll.target = clamp(this.scroll.target, 0, total)
   }
 
-  onScrollTouchEnd (event) {
+  onScrollTouchEnd(event) {
     this.isDown = false
   }
 
-  onScrollUpdate () {
+  onScrollUpdate() {
     this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
 
-    TweenMax.set(this.element, {
-      y: -this.scroll.current
+    GSAP.set(this.element, {
+      y: -this.scroll.current,
     })
 
     this.onScrollUpdateEvent = window.requestAnimationFrame(this.onScrollUpdate.bind(this))
   }
 
-  addEventListeners () {
+  addEventListeners() {
     if (this.element) {
       window.addEventListener('mousewheel', this.onScrollMouseWheelEvent)
 
@@ -131,7 +135,7 @@ export default class extends EventEmitter {
     }
   }
 
-  removeEventListeners () {
+  removeEventListeners() {
     if (this.element) {
       window.removeEventListener('mousewheel', this.onScrollMouseWheelEvent)
 

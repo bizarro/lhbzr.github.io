@@ -1,33 +1,36 @@
 import AutoBind from 'auto-bind'
-import EventEmitter from 'events'
+import { createNanoEvents } from 'nanoevents'
 
-import { TimelineMax } from 'gsap'
+import GSAP from 'gsap'
 
-export default class extends EventEmitter {
-  constructor ({ appear = false, element, name }) {
-    super()
-
+export default class {
+  constructor({ appear = false, element, name }) {
     this.appear = appear
     this.element = document.createElement(element)
     this.name = name
+    this.events = createNanoEvents()
 
     AutoBind(this)
   }
 
-  async show (animation = new TimelineMax()) {
+  on(event, callback) {
+    return this.events.on(event, callback)
+  }
+
+  async show(animation = GSAP.timeline()) {
     document.body.appendChild(this.element)
 
     this.addEventListeners()
 
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       animation.call(() => resolve())
     })
   }
 
-  async hide (animation = new TimelineMax()) {
+  async hide(animation = GSAP.timeline()) {
     if (!this.element.parentNode) return
 
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       animation.call(() => resolve())
     })
 
@@ -38,15 +41,9 @@ export default class extends EventEmitter {
     return Promise.resolve()
   }
 
-  addEventListeners () {
+  addEventListeners() {}
 
-  }
+  removeEventListeners() {}
 
-  removeEventListeners () {
-
-  }
-
-  onRoute (route) {
-
-  }
+  onRoute(route) {}
 }

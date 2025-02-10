@@ -1,4 +1,4 @@
-@import "../../styles/index";
+@import '../../styles/index';
 
 .about {
   align-items: center;
@@ -18,7 +18,7 @@
     visibility: visible;
   }
 
-  @include media("<small") {
+  @include media('<small') {
     display: block;
     height: auto;
   }
@@ -26,11 +26,11 @@
 
 .wrapper {
   margin: auto;
-  max-width: 542px;
+  max-width: 575px;
   padding: 150px 25px;
   position: relative;
 
-  @include media("<small") {
+  @include media('<small') {
     padding: 150px 25px 50px;
   }
 }
@@ -45,7 +45,7 @@
     vertical-align: top;
   }
 
-  @include media("<small") {
+  @include media('<small') {
     font-size: 30px;
   }
 }
@@ -63,7 +63,7 @@
     margin-top: 25px;
   }
 
-  @include media("<small") {
+  @include media('<small') {
     font-size: 15px;
 
     br {
@@ -84,7 +84,7 @@
   margin-right: 10px;
   vertical-align: middle;
 
-  @include media("<small") {
+  @include media('<small') {
     display: block;
     margin-bottom: 5px;
     margin-right: 0;

@@ -42,12 +42,14 @@ module.exports = {
       domain: 'lhbzr.com'
     }),
 
-    new CopyWebpackPlugin([
-      {
-        from: './app/assets/shared',
-        to: ''
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './app/assets/shared',
+          to: ''
+        }
+      ]
+    }),
 
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -93,37 +95,34 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              module: true,
-              sourceMap: IS_DEVELOPMENT
+              modules: true,
             }
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: IS_DEVELOPMENT
-            }
+            loader: 'postcss-loader'
           },
           {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: IS_DEVELOPMENT
-            }
+            loader: 'sass-loader'
           }
         ]
       },
 
       {
-        test: /\.(jpe?g|png|gif|svg|woff2?)$/,
+        test: /\.(jpe?g|png|gif|svg|mp3)$/,
         loader: 'file-loader',
         options: {
+          esModule: false,
           name (file) {
-            if (IS_DEVELOPMENT) {
-              return '[path][name].[ext]'
-            }
-
             return '[hash].[ext]'
           }
         }
+      },
+
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: 'file-loader',
+        type: 'asset/resource',
+        dependency: { not: ['url'] }
       },
 
       {

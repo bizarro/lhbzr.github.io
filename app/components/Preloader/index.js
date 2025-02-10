@@ -1,7 +1,4 @@
-import Loader from 'assets-loader'
-import WebFontLoader from 'webfontloader'
-
-import { TweenMax } from 'gsap'
+import GSAP from 'gsap'
 import { each } from 'lodash'
 
 import Element from '../../classes/Element'
@@ -11,10 +8,10 @@ import styles from './styles.scss'
 import Data from '../../data/Work'
 
 export default class extends Element {
-  constructor () {
+  constructor() {
     super({
       element: 'div',
-      name: 'Preloader'
+      name: 'Preloader',
     })
 
     this.element.className = `Preloader ${styles.preloader}`
@@ -30,72 +27,76 @@ export default class extends Element {
     `
 
     this.elements = {
-      path: this.element.querySelectorAll('.Path')
+      path: this.element.querySelectorAll('.Path'),
     }
 
     this.assets = []
+    this.counter = 0
 
     this.setup()
     this.show()
   }
 
-  setup () {
-    each(this.elements.path, path => {
+  setup() {
+    each(this.elements.path, (path) => {
       path.style.strokeDasharray = `${path.getTotalLength()}px`
       path.style.strokeDashoffset = `${path.getTotalLength()}px`
     })
 
-    each(Data, data => {
+    each(Data, (data) => {
       this.assets.push(data.image)
     })
 
-    Loader({ assets: this.assets }).on('progress', this.onProgress).on('complete', this.onComplete).start()
+    this.assets.forEach((asset) => {
+      const image = document.createElement('img')
+
+      image.src = asset
+      image.onload = this.onLoad
+    })
   }
 
-  show () {
-    TweenMax.set(this.element, {
-      autoAlpha: 1
+  onLoad() {
+    this.counter += 1
+
+    if (this.counter === this.assets.length) {
+      this.onComplete()
+    }
+  }
+
+  show() {
+    GSAP.set(this.element, {
+      autoAlpha: 1,
     })
 
     return super.show()
   }
 
-  hide () {
-    TweenMax.set(this.element, {
-      autoAlpha: 0
+  hide() {
+    GSAP.set(this.element, {
+      autoAlpha: 0,
     })
 
     return super.hide()
   }
 
-  onProgress (progress) {
+  onProgress(progress) {
     this.element.style.visibility = 'visible'
 
-    each(this.elements.path, path => {
-      const length = path.getTotalLength() - (path.getTotalLength() * progress)
+    each(this.elements.path, (path) => {
+      const length = path.getTotalLength() - path.getTotalLength() * progress
 
       path.style.strokeDashoffset = `${length}px`
     })
   }
 
-  onComplete (assets) {
-    each(this.elements.path, path => {
+  onComplete(assets) {
+    each(this.elements.path, (path) => {
       path.style.strokeDashoffset = 0
     })
 
-    TweenMax.delayedCall(0.5, () => {
-      WebFontLoader.load({
-        custom: {
-          families: ['Borda']
-        },
-        urls: [
-          require('../../styles/fonts.scss')
-        ],
-        active: () => {
-          this.emit('preloaded', assets)
-          this.hide()
-        }
-      })
+    GSAP.delayedCall(0.5, () => {
+      this.events.emit('preloaded', assets)
+      this.hide()
     })
   }
 }

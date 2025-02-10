@@ -3,17 +3,6 @@ each project, index in projects
     header(class=`Header ${styles.header}`)
       h1(class=`Title ${styles.title}`)=project.title
 
-      if project.url
-        a(class=styles.button href=project.url target="_blank")
-          span(class=`ButtonTop ${styles.button__border} ${styles['button__border--top']}`)
-          span(class=`ButtonRight ${styles.button__border} ${styles['button__border--right']}`)
-          span(class=`ButtonBottom ${styles.button__border} ${styles['button__border--bottom']}`)
-          span(class=`ButtonLeft ${styles.button__border} ${styles['button__border--left']}`)
-
-          span(class=`ButtonText`) Launch Project
-
-          span(class=`ButtonArrow ${styles.button__arrow}`)
-
     div(class=styles.description)
       div(class=styles.information)
         each section, index in project.information

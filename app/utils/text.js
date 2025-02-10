@@ -1,4 +1,4 @@
-export function split ({ element, expression = ' ', append = true }) {
+export function split({ element, expression = ' ', append = true }) {
   let words = splitText(element.innerHTML.toString(), expression)
   let string = ''
 
@@ -7,7 +7,7 @@ export function split ({ element, expression = ' ', append = true }) {
       const lines = line.split('<br>')
 
       lines.forEach((line, index) => {
-        string += (index > 0) ? '<br>' + parseLine(line) : parseLine(line)
+        string += index > 0 ? '<br>' + parseLine(line) : parseLine(line)
       })
     } else {
       string += parseLine(line)
@@ -19,7 +19,7 @@ export function split ({ element, expression = ' ', append = true }) {
   let spans = element.querySelectorAll('span')
 
   if (append) {
-    spans.forEach(span => {
+    spans.forEach((span) => {
       if (span.textContent.length === 1 && span.innerHTML.trim() !== '') {
         span.innerHTML = `${span.textContent}&nbsp;`
       }
@@ -29,7 +29,7 @@ export function split ({ element, expression = ' ', append = true }) {
   return spans
 }
 
-export function calculate (spans) {
+export function calculate(spans) {
   let lines = []
   let words = []
 
@@ -57,7 +57,7 @@ export function calculate (spans) {
   return lines
 }
 
-function splitText (text, expression) {
+function splitText(text, expression) {
   let splits = text.split('<br>')
   let array = []
 
@@ -72,10 +72,10 @@ function splitText (text, expression) {
   return array
 }
 
-function parseLine (line) {
+function parseLine(line) {
   if (line === '' || line === ' ') {
     return line
   } else {
-    return (line === '<br>') ? '<br>' : `<span>${line}</span>` + ((line.length > 1) ? ' ' : '')
+    return line === '<br>' ? '<br>' : `<span>${line}</span>` + (line.length > 1 ? ' ' : '')
   }
 }

@@ -13,9 +13,7 @@ import {
   map
 } from 'lodash'
 
-import {
-  TimelineMax
-} from 'gsap'
+import GSAP from 'gsap'
 
 import Media from './Media'
 import Projects from 'data/Work'
@@ -95,19 +93,21 @@ export default class extends Page {
   }
 
   show () {
-    const timeline = new TimelineMax({
+    const timeline = GSAP.timeline({
       onStart: () => (this.isActive = true)
     })
 
     timeline.set(this.wrapper.position, { x: this.widthMaximum })
 
-    timeline.to(this, 1, {
+    timeline.to(this, {
+      duration: 1,
       opacity: 1
     }, 'start')
 
-    timeline.fromTo(this.x, 1, {
+    timeline.fromTo(this.x, {
       target: this.widthMaximum
     }, {
+      duration: 1,
       target: -this.width * this.index
     }, 'start')
 
@@ -115,11 +115,12 @@ export default class extends Page {
   }
 
   hide () {
-    const timeline = new TimelineMax({
+    const timeline = GSAP.timeline({
       onComplete: () => (this.isActive = false)
     })
 
-    timeline.to(this, 0.5, {
+    timeline.to(this, {
+      duration: 0.5,
       opacity: 0
     })
 
@@ -198,7 +199,7 @@ export default class extends Page {
   }
 
   onSelect (project) {
-    this.emit('change', `/project/${project}`)
+    this.events.emit('change', `/project/${project}`)
   }
 
   onCheck () {

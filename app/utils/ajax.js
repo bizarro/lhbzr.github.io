@@ -1,4 +1,4 @@
-export function get (url) {
+export function get(url) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     const done = 4
